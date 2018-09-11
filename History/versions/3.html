@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang-"en">
+	<head>
+		<meta charset="utf-8">
+		<title>Alex</title>
+		<style>
+		
+		
+		/* Link Variants */
+		
+			a:link, a:visited {
+				
+				font-family: Verdana;
+				text-decoration: none;
+				color:black;
+				border-radius: 25px;
+				background-color:tomato;
+				text-align: center;
+				font-size: 50px;
+				font-size: 1.75vw;
+				width: 25%;
+				height: 400px;
+				border: 2px solid black;
+			}
+			a:hover {
+				
+				text-decoration: underline;
+				color:black;
+				background-color: #e0573e;
+			}
+		
+			* {margin: 0; padding: 0}
+			
+			.Container{
+					
+					margin: auto;
+					display:flex;
+					width:70%;
+					height:100%;
+					
+					
+			}
+			h1{
+				margin: 40px;
+				margin-bottom: 70px;
+			
+			}
+			
+			/* Old class used to create buttons before I knew you could use css for anchor tags
+			
+			.LinkBox{
+				border-radius: 25px;
+				background-color:tomato;
+				text-align: center;
+				font-size: 50px;
+				font-size: 2vw;
+				width: 25%;
+				height: 400px;
+				border: 2px solid black;
+			} */
+			
+			
+			
+			
+			/* ===== CSS Tests ======*/
+			
+				.zoom {
+					transition: transform .2s, background-color .1s ease-in;
+					/*margin: 0 auto;*/
+				}
+				.zoom:hover {
+					transform: scale(1.25);
+					
+				}
+				
+				.slide{
+					transition: transform .3s;
+				}
+				
+				.slide:active{
+					transform: translate( -100px)
+				}
+				
+				
+</style>
+			
+
+		</style>
+	</head>
+
+	<body>
+	
+	
+	<font face="Calibri">
+	<center>
+		<h1><font face="Courier">Alex van Stekelenborg</h1>
+	</center>
+	</font>
+	
+	<div class="Container">
+		<a class="zoom" href="about.html">Store</a>
+		<a class="zoom" href="about.html">About</a>
+		<a class="zoom" href="about.html">Projects</a>
+		<a class="zoom" href="./history/history.html">Evolution of this Website</a>
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	
+	<hr size=3>
+	
+	<font face="Verdana">
+		<center>
+			<h1>Testing Section &#128679; See the next W.I.P. for my site :)</h1>
+		</center>
+	<br>
+	<br>
+	
+	<div class="Container">
+		<a class="zoom" href="about.html">Store</a>
+		<a class="zoom" href="about.html">About</a>
+		
+		<a class="slide" href="about.html">About</a>
+		<a class="slide" href="about.html">About</a>
+	</div>
+	
+	<br>
+	<br>
+	<br>
+		
+		
+		
+	</font>
+	</body>
+	
+</html>
