@@ -59,7 +59,7 @@ html, body{
 
 
      .zoomChar{
-        transition: transform .1s;
+        transition: transform ease-in-out 1s, opacity ease-in-out .3s;
 
         margin-top: 70px;
         margin-bottom: 80px;
@@ -71,10 +71,8 @@ html, body{
     }
 
     .zoomChar:hover{
-        transform: scale(1.25);
-
-
-
+        transform: scale(.01);
+        opacity: 0;
     }
 
     /* Old class used to create buttons before I knew you could use css for anchor tags
