@@ -9,7 +9,19 @@ html, body{
 }
 
 
-/*individual letter zoom in effect*/
+    p {
+        font-family: Times New Roman;
+        font-size: .9vw;
+        padding: 15px;
+        display: inline-block;
+        height: 500px;
+        width: 100%;
+
+        border-radius: 2px;
+        background-color: #d8d7ed;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
 
 
 /* Link Variants */
