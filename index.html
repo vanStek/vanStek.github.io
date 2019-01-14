@@ -12,7 +12,6 @@
 
 
 			//Earthquake Conversion script
-
 			function Earthquake_conv() {
 
 				var input = document.getElementById('input').value;
@@ -22,18 +21,37 @@
 			    joules = Math.pow(10, 1.5 * input + 4.8);
 			    tnt = joules * 0.00000000024;
 
-			    document.getElementById('joules').value = (joules.toFixed(1) + ' joules');
-			    document.getElementById('TNT').value = (tnt.toFixed(3)) + ' tons of TNT';
+			    document.getElementById("joules").value = (joules.toFixed(1) + ' joules');
+			    document.getElementById("TNT").value = (tnt.toFixed(3)) + ' tons of TNT';
+
 			}
 
 			function die_game() {
+
+				document.getElementById("directions").style.display= "block";
+			//	document.getElementById("directions").innerHTML = "<br>This program will simulate a dice game for you" +
+				//	" that you can play yourself. The rules are simple:  If you roll a 9, 11, 18, or 24, you win." +
+				//	" If you roll a 6, 12, 13, 17, 19, or 23, you lose! If you land on any other number, then" +
+				//	" you must continue to roll until you get the same number as your first roll again." +
+				//	" If you roll a 13 though, you lose.";
+
+
+				//sets up the die constructor, four dice will be made
 				const die = {
 					rolled: 0,
-					roll: function() {
-					 	this.rolled = (Math.random()*6 + 1);
+					roll  : function() {
+					 	this.rolled = Math.floor((Math.random()*6 + 1));
 					},
 				};
+
+				var die1 = new die();
+				var die2 = new die();
+				var die3 = new die();
+				var die4 = new die();
+
+
 			}
+
 
 
 		</script>
@@ -59,7 +77,16 @@
 			<div class="p">
 
 				<div class = "header">DICE GAME</div>
-				<button onclick="die_game">Play Die Game</button>
+				<div style="text-align: center;">
+					<button onclick="die_game()">Click to Play Dice Game</button>
+				</div>
+				<div id = "directions" style = "display: none"><br>This program will simulate a dice game for you
+					that you can play yourself. The rules are simple:
+					<br>If you roll a 9, 11, 18, or 24, you win.
+					<br>If you roll a 6, 12, 13, 17, 19, or 23, you lose!
+					<br>If you land on any other number, then
+					you must continue to roll until you get the same number as your first roll again.
+					<br>If you roll a 13 though, you lose."</div>
 
 
 			</p>
