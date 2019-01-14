@@ -4,58 +4,69 @@
 		<meta charset="utf-8">
 		<title>VANSTEK_</title>
 		<link rel="stylesheet" type="text/css" href="./CSS/style.css">
+		<link rel="icon" type="image/png" href="E:\Alex\Documents\GitHub\vanStek.github.io\img\favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="E:\Alex\Documents\GitHub\vanStek.github.io\img\img\favicon-16x16.png" sizes="16x16" />
+
+
+		<script async>
+
+
+			//Earthquake Conversion script
+
+			function Earthquake_conv() {
+
+				var input = document.getElementById('input').value;
+			    var joules;
+			    var tnt;
+
+			    joules = Math.pow(10, 1.5 * input + 4.8);
+			    tnt = joules * 0.00000000024;
+
+			    document.getElementById('joules').value = (joules.toFixed(1) + ' joules');
+			    document.getElementById('TNT').value = (tnt.toFixed(3)) + ' tons of TNT';
+			}
+
+			function die_game() {
+				const die = {
+					rolled: 0,
+					roll: function() {
+					 	this.rolled = (Math.random()*6 + 1);
+					},
+				};
+			}
+
+
+		</script>
+
+
 
 
 	</head>
 
 	<body>
-	<font face="Calibri">
+		<div class = "container">
 
-		<div class="zoomChar">
-				Alex van Stekelenborg
+			<div class="p">
+
+				<div class ="header">Richter to Joules/TNT</div>
+
+				<input id ="input" type="text" placeholder="Enter Richter scale of earthquake" onchange='Earthquake_conv()'>
+				<input id ="joules" type="text" readonly placeholder="equivalent energy in Joules">
+				<input id ="TNT" type="text" readonly placeholder="equivalent energy in tons of TNT">
+
+			</div>
+
+			<div class="p">
+
+				<div class = "header">DICE GAME</div>
+				<button onclick="die_game">Play Die Game</button>
+
+
+			</p>
+
 		</div>
 
-	</font>
 
-	<div class="Container">
-		<a class="zoom" href="./pages/about/about.html">About</a>
-		<a class="zoom" href="https://github.com/vanstek">Github</a>
-		<a class="zoom" href="about.html">Projects Timeline</a>
-		<a class="zoom" href="./pages/history/history.html">Evolution of this Website</a>
-		<a class="zoom" href="./pages/blog/blog.html">Blog</a>
-		<a class="zoom" href="./pages/Hue-Bot/Hue-Bot.html">Hue Bot Project</a>
-	</div>
-
-	<br>
-	<br>
-	<br>
-
-<!--
-
-	<hr size=3>
-
-	<font face="Verdana">
-		<center>
-			<h1>Testing Section &#128679; See the next W.I.P. for my site :)</h1>
-		</center>
-	<br>
-	<br>
-
-	<div class="Container">
-		<a class="zoom" href="about.html">Store</a>
-		<a class="zoom" href="about.html">About</a>
-
-		<a class="slide" href="about.html"></a>
-		<a class="slide" href="about.html">Blog?</a>
-	</div>
-
-	<br>
-	<br>
-	<br>
--->
-
-
-	</font>
 	</body>
 
 </html>
