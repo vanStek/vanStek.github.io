@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang-"en">
+	<head>
+		<meta charset="utf-8">
+		<title>VANSTEK_</title>
+		<link rel="stylesheet" type="text/css" href="./CSS/style.css">
+		<link rel="icon" type="image/png" href="E:\Alex\Documents\GitHub\vanStek.github.io\img\favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="E:\Alex\Documents\GitHub\vanStek.github.io\img\favicon-16x16.png" sizes="16x16" />
+
+
+		<script async>
+
+
+
+            //below are dice game functions
+			function rules() {
+				document.getElementById("directions").style.display= "block";
+				document.getElementById("agree").style.display= "block";
+				document.getElementById("head_directions").style.display = "block";
+				document.getElementById("start").style.display = "none";
+			}
+			function begin(){
+				document.getElementById("agree").style.display = "none";
+				document.getElementById("head_directions").style.display = "none";
+				document.getElementById("game").style.display = "block";
+			}
+            function roll(){
+
+            }
+
+		</script>
+
+
+
+
+	</head>
+
+	<body>
+		<div class = "container">
+			<div class="p">
+				<div class = "header">DICE GAME &#127922;</div>
+
+				<div style="text-align: center;">
+					<button id = "start" onclick="rules()">Click to Play Dice Game</button>
+				</div>
+
+				<div id = "directions">
+					<div id="head_directions" style="display: none;">
+						This program will simulate a dice game for you
+						that you can play yourself. The rules are simple:
+					</div>
+
+					<div>
+						<ul>
+						<li>If you roll a 9, 11, 18, or 24, you win.</li>
+						<li>If you roll a 6, 12, 13, 17, 19, or 23, you lose!</li>
+						<li>If you land on any other number, then</li>
+						you must continue to roll until you get the same number as your first roll again.</li>
+						<li>If you roll a 13 though, you lose.</li>
+					</div>
+				</div>
+
+                <!--
+                logic of upcoming code
+                1.onclick of continue button, dice game begins. continue button disappears, roll button appears in new div below rules
+                2.
+                -->
+				<button id = "agree" onclick = "begin()" style = "display: none; margin: 10px;" >Click to continue</button>
+
+				<div id="game">test</div>
+
+			</div>
+		</div>
+	</body>
+
+</html>
