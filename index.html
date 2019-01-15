@@ -29,13 +29,7 @@
 			function die_game() {
 
 				document.getElementById("directions").style.display= "block";
-			//	document.getElementById("directions").innerHTML = "<br>This program will simulate a dice game for you" +
-				//	" that you can play yourself. The rules are simple:  If you roll a 9, 11, 18, or 24, you win." +
-				//	" If you roll a 6, 12, 13, 17, 19, or 23, you lose! If you land on any other number, then" +
-				//	" you must continue to roll until you get the same number as your first roll again." +
-				//	" If you roll a 13 though, you lose.";
-
-
+				document.getElementById("agree").style.display= "block";
 				//sets up the die constructor, four dice will be made
 				const die = {
 					rolled: 0,
@@ -52,6 +46,10 @@
 
 			}
 
+			function show(element){
+
+				docment.getElementById(element).style.display = "block";
+			}
 
 
 		</script>
@@ -77,16 +75,27 @@
 			<div class="p">
 
 				<div class = "header">DICE GAME</div>
+
 				<div style="text-align: center;">
 					<button onclick="die_game()">Click to Play Dice Game</button>
 				</div>
-				<div id = "directions" style = "display: none"><br>This program will simulate a dice game for you
+
+				<div id = "directions" style = "display: none">
+					<br>This program will simulate a dice game for you
 					that you can play yourself. The rules are simple:
 					<br>If you roll a 9, 11, 18, or 24, you win.
 					<br>If you roll a 6, 12, 13, 17, 19, or 23, you lose!
 					<br>If you land on any other number, then
 					you must continue to roll until you get the same number as your first roll again.
-					<br>If you roll a 13 though, you lose."</div>
+					<br>If you roll a 13 though, you lose.<br>
+				</div>
+
+				<button id = "agree" onclick="show("dice_game")" style="display: none">Click to continue</button>
+
+				<div id="game"></div>
+
+
+
 
 
 			</p>

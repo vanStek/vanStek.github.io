@@ -40,6 +40,15 @@ html, body{
 
     }
 
+
+    #dice_game{
+        display: none;
+        padding: 15px;
+        width: 90%;
+        overflow: auto;
+    }
+
+
     input[type=text]{
         width: 100%;
         padding: 12px 20px;
