@@ -89,31 +89,43 @@
 							document.getElementById("win_loss").innerHTML = "Roll again.";
 							flag = 1;
 
-							var goal_roll = total;
-							document.getElementById("roll_button").removeEventListener("click", game_loop);
-							document.getElementById("roll_button").addEventListener("click", flag = 1);
-								while (flag == 1){
-									document.getElementById("roll_output").innerHTML = roll();
-									if (total = goal_roll){
-										document.getElementById("win_loss").innerHTML = "You won.";
-										document.getElementById("play_again").style.display = "block";
-										flag == 0;
-									}
-									else if (total = 13){
-										flag = 0;
-										document.getElementById("win_loss").innerHTML = "You lost.";
-										document.getElementById("play_again").style.display = "block";
-									}
-									else{
-										document.getElementById("win_loss").innerHTML = "Roll again.";
-										flag = 1;
-									}
-
-								}
-								flag = 1;
+							while(flag ==1){
+								second_loop;
 							}
 
+
+							var goal_roll = total;
+							document.getElementById("roll_button").removeEventListener("click", game_loop);
+							while(flag == 1){
+
+								document.getElementById("roll_button").addEventListener("click", second_loop);
+								second_loop;
+
+							}
+							}
+						flag = 1;
 						document.getElementById("roll_button").addEventListener("click", game_loop);
+					}
+				}
+
+			function second_loop(){
+
+					document.getElementById("roll_output").innerHTML = roll();
+					if (total == goal_roll){
+						document.getElementById("win_loss").innerHTML = "You won.";
+
+						document.getElementById("play_again").style.display = "block";
+						flag = 0;
+					}
+
+					else if (total == 13){
+						document.getElementById("win_loss").innerHTML = "You lost.";
+						document.getElementById("play_again").style.display = "block";
+						flag = 0;
+					}
+					else{
+						document.getElementById("win_loss").innerHTML = "Roll again.";
+						flag =1;
 					}
 				}
 
