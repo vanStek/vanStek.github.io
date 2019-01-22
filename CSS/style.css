@@ -15,8 +15,8 @@ html, body{
 
         width: 65%;
         padding: 15px;
-        margin-bottom: 30px;
-        margin: 30px auto;
+
+        margin: 30px auto 30px;
         display: block;
         overflow: auto;
 
@@ -35,10 +35,45 @@ html, body{
         padding: 10px;
     }
 
+    .button{
+        background-color: inherit;
+        border-radius: 5px;
+        border: groove;
+        padding: 10px;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        display: inherit;
+        cursor: pointer;
+
+
+    }
+    .button:active{
+        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+
+
+    .output{
+        font-family: Helvetica;
+        font-size: 1.5vw;
+
+        width: 65%;
+        padding: 15px;
+
+        margin: 5px 1px 5px 1px;
+        display: block;
+        overflow: auto;
+
+        border-radius: 4px;
+        background-color: #ff6200;
+
+    }
+
+
     /*not sure if will be used*/
     #game{
-        
-
  	background-color: #ffa205;
         padding: 10px;
         margin: 5px;
@@ -46,8 +81,8 @@ html, body{
 	border-style: solid;
         display: none;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
-    
+
+
 
     }
 
@@ -58,7 +93,7 @@ html, body{
         border-radius: 4px;
         display: none;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
-    
+
     }
 
     input[type=text]{

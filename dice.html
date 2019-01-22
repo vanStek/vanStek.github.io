@@ -10,23 +10,63 @@
 
 		<script async>
 
+			//event listeners
+			window.onload = function(){
+				document.getElementById("roll_button").addEventListener("click", game_loop);
+			}
 
 
-            //below are dice game functions
+            //below are dice game functions and variables
+			var total = 0;
+
+			//shows rules
 			function rules() {
 				document.getElementById("directions").style.display= "block";
 				document.getElementById("agree").style.display= "block";
 				document.getElementById("head_directions").style.display = "block";
 				document.getElementById("start").style.display = "none";
 			}
+
+			//sets up game
 			function begin(){
 				document.getElementById("agree").style.display = "none";
 				document.getElementById("head_directions").style.display = "none";
 				document.getElementById("game").style.display = "block";
-			}
-            function roll(){
 
+			}
+
+			//rolls dice, main script
+            function roll(){
+				var die1 = Math.floor((Math.random() * 6) + 1);
+				var die2 = Math.floor((Math.random() * 6) + 1);
+				var die3 = Math.floor((Math.random() * 6) + 1);
+				var die4 = Math.floor((Math.random() * 6) + 1);
+
+				total = die1 + die2 + die3 + die4;
+
+
+				return die1 + ", " + die2 + ", " + die3 + ", and " + die4 + ", for a total of " + total + ".";
             }
+
+			//restarts game
+			function restart(){
+
+			}
+
+			function game_loop(){
+
+				document.getElementById("roll_output").innerHTML = roll();
+
+				if (total == 0){
+					document.getElementById("win_loss").innerHTML = "You win";
+				}
+				else {
+
+				}
+
+
+			}
+
 
 		</script>
 
@@ -52,6 +92,7 @@
 
 					<div>
 						<ul>
+						<li>You roll four dice and take the sum of your rolls.</li>
 						<li>If you roll a 9, 11, 18, or 24, you win.</li>
 						<li>If you roll a 6, 12, 13, 17, 19, or 23, you lose!</li>
 						<li>If you land on any other number, then</li>
@@ -61,13 +102,23 @@
 				</div>
 
                 <!--
-                logic of upcoming code
-                1.onclick of continue button, dice game begins. continue button disappears, roll button appears in new div below rules
-                2.
+                game logic
+				1. click continue, sets up game
+				2. roll button appears
+				3. onclick of roll, rolls and total is displayed
+
                 -->
 				<button id = "agree" onclick = "begin()" style = "display: none; margin: 10px;" >Click to continue</button>
 
-				<div id="game">test</div>
+				<div id="game">
+					<div class = "button" id = "roll_button">Roll Dice</div>
+					<div style = "display: flex">
+						<div class= "output" style = "text-align: center">Your roll: </div>
+						<div id = "roll_output" class = "output"></div>
+						<div id = "win_loss">Test</div>
+					</div>
+
+				</div>
 
 			</div>
 		</div>
