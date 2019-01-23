@@ -76,28 +76,42 @@ html, body{
 
     }
 
+    #roll_output{
+        width: 75%;
+    }
+
+    #first_roll{
+        width: 28%;
+        height: auto;
+
+        display: none;
+        font-family: Helvetica;
+        font-size: 1.5vw;
+        text-align: center;
+        margin: 2px;
+        border-radius: 4px;
+        background-color: #ff6200;
+    }
 
     /*not sure if will be used*/
     #game{
  	background-color: #ffa205;
-        padding: 10px;
-        margin: 5px;
-        border-radius: 4px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
 	border-style: solid;
-        display: none;
+    display: none;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-
-
+    height: auto;
     }
 
     #directions{
         background-color: #ffa200;
         padding: 10px;
-        margin: 5px;
+        margin: auto;
         border-radius: 4px;
         display: none;
-	      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+	     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
 
     }
 
@@ -106,6 +120,13 @@ html, body{
       text-align: center;
       font-size: 2vw;
       font-family: impact;
+      margin: auto;
+      width: 72%;
+      display: none;
+      height: auto;
+      border-radius: 4px;
+
+
     }
 
     input[type=text]{

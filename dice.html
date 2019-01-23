@@ -56,12 +56,17 @@
 				document.getElementById("play_again").style.display = "none";
 				document.getElementById("roll_output").innerHTML = "";
 				document.getElementById("win_loss").innerHTML = "";
+				document.getElementById("roll_button").style.display = "block";
+				document.getElementById("roll_button").removeEventListener("click", second_loop);
+				document.getElementById("roll_button").addEventListener("click", game_loop);
+
 
 			}
 
 			//lots of spaghetti, could be rewritten much better
 			function game_loop(){
 				flag = 0;
+				//while loop is not needed but i do not want to touch it for fear of messing the code up
 				while (flag == 0){
 
 						document.getElementById("roll_output").innerHTML = roll();
@@ -71,8 +76,10 @@
 							total == 11||
 							total == 18||
 							total == 24) {
+							document.getElementById("win_loss").style.display = "block";
 							document.getElementById("win_loss").innerHTML = "You won.";
 							document.getElementById("play_again").style.display = "block";
+							document.getElementById("roll_button").style.display = "none";
 							flag = 1;
 						}
 						else if (total == 6 ||
@@ -81,53 +88,52 @@
 								 total == 17||
 							 	 total == 19||
 							 	 total == 23) {
+							document.getElementById("win_loss").style.display = "block";
 							document.getElementById("win_loss").innerHTML = "You lost.";
 							document.getElementById("play_again").style.display = "block";
+							document.getElementById("roll_button").style.display = "none";
 							flag = 1;
 						}
 						else{
+							document.getElementById("win_loss").style.display = "block";
 							document.getElementById("win_loss").innerHTML = "Roll again.";
+							goal_roll = total;
+							document.getElementById("first_roll").style.display = "block";
+							document.getElementById("first_roll").innerHTML = "Your first roll: " + goal_roll;
 							flag = 1;
-
-							while(flag ==1){
-								second_loop;
 							}
+						}
+						flag = 0;
+						document.getElementById("roll_button").removeEventListener("click", game_loop);
+						document.getElementById("roll_button").addEventListener("click", second_loop);
 
-
-							var goal_roll = total;
-							document.getElementById("roll_button").removeEventListener("click", game_loop);
-							while(flag == 1){
-
-								document.getElementById("roll_button").addEventListener("click", second_loop);
-								second_loop;
-
-							}
-							}
-						flag = 1;
-						document.getElementById("roll_button").addEventListener("click", game_loop);
 					}
-				}
+
 
 			function second_loop(){
 
 					document.getElementById("roll_output").innerHTML = roll();
+
 					if (total == goal_roll){
 						document.getElementById("win_loss").innerHTML = "You won.";
-
 						document.getElementById("play_again").style.display = "block";
-						flag = 0;
+						document.getElementById("roll_button").style.display = "none";
+						document.getElementById("first_roll").style.display = "none";
 					}
 
 					else if (total == 13){
+						document.getElementById("win_loss").style.display = "block";
 						document.getElementById("win_loss").innerHTML = "You lost.";
 						document.getElementById("play_again").style.display = "block";
-						flag = 0;
+						document.getElementById("roll_button").style.display = "none";
+						document.getElementById("first_roll").style.display = "none";
 					}
 					else{
 						document.getElementById("win_loss").innerHTML = "Roll again.";
-						flag =1;
+						
 					}
 				}
+
 
 		</script>
 
@@ -172,7 +178,7 @@
                 -->
 				<div style="text-align: center;">
 					<div style="display: inline-block;">
-						<button id = "agree" onclick = "begin()" style = "display: none;" >Click to continue</button>
+						<button id = "agree" onclick = "begin()" style = "display: none; margin: 2px;" >Click to continue</button>
 					</div>
 				</div>
 				<div id="game">
@@ -181,7 +187,10 @@
 						<div class= "output" style = "text-align: center; width: 25%;">Your roll: </div>
 						<div id = "roll_output" class = "output"></div>
 					</div>
-					<div id = "win_loss"></div>
+					<div style ="display:flex">
+						<div id = "first_roll"></div>
+						<div id = "win_loss"></div>
+					</div>
 					<div id = "play_again" class = "button play_again">Play again?</div>
 
 				</div>
