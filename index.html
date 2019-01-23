@@ -1,108 +1,63 @@
 <!DOCTYPE html>
-<html lang-"en">
-	<head>
-		<meta charset="utf-8">
+<!-- saved from url=(0026)https://vanstek.github.io/ -->
+<html lang-"en"=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 		<title>VANSTEK_</title>
-		<link rel="stylesheet" type="text/css" href="./CSS/style.css">
-		<link rel="icon" type="image/png" href="E:\Alex\Documents\GitHub\vanStek.github.io\img\favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="E:\Alex\Documents\GitHub\vanStek.github.io\img\img\favicon-16x16.png" sizes="16x16" />
-
-
-		<script async>
-
-
-			//Earthquake Conversion script
-			function Earthquake_conv() {
-
-				var input = document.getElementById('input').value;
-			    var joules;
-			    var tnt;
-
-			    joules = Math.pow(10, 1.5 * input + 4.8);
-			    tnt = joules * 0.00000000024;
-
-			    document.getElementById("joules").value = (joules.toFixed(1) + ' joules');
-			    document.getElementById("TNT").value = (tnt.toFixed(3)) + ' tons of TNT';
-
-			}
-
-			function die_game() {
-
-				document.getElementById("directions").style.display= "block";
-				document.getElementById("agree").style.display= "block";
-				//sets up the die constructor, four dice will be made
-				const die = {
-					rolled: 0,
-					roll  : function() {
-					 	this.rolled = Math.floor((Math.random()*6 + 1));
-					},
-				};
-
-				var die1 = new die();
-				var die2 = new die();
-				var die3 = new die();
-				var die4 = new die();
-
-
-			}
-
-			function show(element){
-
-				docment.getElementById(element).style.display = "block";
-			}
-
-
-		</script>
-
-
+		<link rel="stylesheet" type="text/css" href="./index_files/style.css">
 
 
 	</head>
 
 	<body>
-		<div class = "container">
+	<font face="Calibri">
 
-			<div class="p">
-
-				<div class ="header">Richter to Joules/TNT</div>
-
-				<input id ="input" type="text" placeholder="Enter Richter scale of earthquake" onchange='Earthquake_conv()'>
-				<input id ="joules" type="text" readonly placeholder="equivalent energy in Joules">
-				<input id ="TNT" type="text" readonly placeholder="equivalent energy in tons of TNT">
-
-			</div>
-
-			<div class="p">
-
-				<div class = "header">DICE GAME</div>
-
-				<div style="text-align: center;">
-					<button onclick="die_game()">Click to Play Dice Game</button>
-				</div>
-
-				<div id = "directions" style = "display: none">
-					This program will simulate a dice game for you
-					that you can play yourself. The rules are simple:
-					If you roll a 9, 11, 18, or 24, you win.
-					<br>If you roll a 6, 12, 13, 17, 19, or 23, you lose!
-					<br>If you land on any other number, then
-					you must continue to roll until you get the same number as your first roll again.
-					<br>If you roll a 13 though, you lose.<br>
-				</div>
-
-				<button id = "agree" onclick="show("dice_game")" style="display: none">Click to continue</button>
-
-				<div id="game"></div>
-
-
-
-
-
-			</div>
-
+		<div class="zoomChar">
+				Alex van Stekelenborg
 		</div>
 
+	</font>
 
-	</body>
+	<div class="Container">
+		<a class="zoom" href="https://vanstek.github.io/pages/about/about.html">About</a>
+		<a class="zoom" href="https://github.com/vanstek">Github</a>
+		<a class="zoom" href="https://vanstek.github.io/about.html">Projects Timeline</a>
+		<a class="zoom" href="https://vanstek.github.io/pages/history/history.html">Evolution of this Website</a>
+		<a class="zoom" href="https://vanstek.github.io/pages/blog/blog.html">Blog</a>
+		<a class="zoom" href="https://vanstek.github.io/pages/Hue-Bot/Hue-Bot.html">Hue Bot Project</a>
+		<a class="zoom" href="https://vanstek.github.io/pages/projects/projects.html">Projects</a>
+	</div>
 
-</html>
+	<br>
+	<br>
+	<br>
+
+<!--
+
+	<hr size=3>
+
+	<font face="Verdana">
+		<center>
+			<h1>Testing Section &#128679; See the next W.I.P. for my site :)</h1>
+		</center>
+	<br>
+	<br>
+
+	<div class="Container">
+		<a class="zoom" href="about.html">Store</a>
+		<a class="zoom" href="about.html">About</a>
+
+		<a class="slide" href="about.html"></a>
+		<a class="slide" href="about.html">Blog?</a>
+	</div>
+
+	<br>
+	<br>
+	<br>
+-->
+
+
+
+
+
+
+<div style="clear: both;"></div></body></html>
