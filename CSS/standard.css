@@ -55,6 +55,13 @@
         background-color: #76e0d6;
     }
 
+    a.home{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        height: 5%;
+        width: 10%;
+    }
 
     .Container{
 
