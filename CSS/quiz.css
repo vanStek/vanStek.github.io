@@ -1,0 +1,63 @@
+html, body{
+    height: 100%;
+
+    background-image: linear-gradient(to right, #cfd9df, #eff4f7);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
+}
+
+
+
+
+#start{
+    position: absolute;
+    top:10%;
+    right:50%;
+    transform: translateX(50%);
+    overflow: auto;
+
+    background: #ffe0e0;
+    border-style: solid;
+    border-color: #e8c9c9;
+    border-width: .5px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+
+    padding: 1px 10px;
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 30px;
+}
+
+.stack{
+
+    position: absolute;
+    top: 10%;
+    right: 10%;
+
+
+    width: 15%;
+
+    background: #fff;
+    box-shadow:
+        /* The top layer shadow */
+        0 1px 1px rgba(0,0,0,0.15),
+        /* The second layer */
+        0 10px 0 -5px #eee,
+        /* The second layer shadow */
+        0 10px 1px -4px rgba(0,0,0,0.15),
+         /* The third layer */
+        0 20px 0 -10px #eee,
+        /* The third layer shadow */
+        0 20px 1px -9px rgba(0,0,0,0.15);
+        /* Padding for demo purposes */
+        padding: 15px;
+
+    overflow: auto;
+}
+
+.card{
+
+}
