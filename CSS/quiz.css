@@ -17,6 +17,7 @@ html, body{
     right:50%;
     transform: translateX(50%);
     overflow: auto;
+    user-select: none;
 
     background: #ffe0e0;
     border-style: solid;
@@ -30,14 +31,20 @@ html, body{
     font-family: 'Major Mono Display', monospace;
     font-size: 30px;
 }
+#start:hover{
+    cursor: pointer;
+}
+#start:active{
+    cursor: pointer;
+    box-shadow: inset 0 0 10px #000000;
+}
+
 
 .stack{
 
     position: absolute;
     top: 10%;
     right: 10%;
-
-
     width: 15%;
 
     background: #fff;
@@ -53,8 +60,8 @@ html, body{
         /* The third layer shadow */
         0 20px 1px -9px rgba(0,0,0,0.15);
         /* Padding for demo purposes */
-        padding: 15px;
-
+    padding: 15px;
+    user-select: none;
     overflow: auto;
 }
 
