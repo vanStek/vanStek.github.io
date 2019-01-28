@@ -10,14 +10,24 @@
     <script src="conversion.js" async></script>
     <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
-
+    <style>
+    .conv{
+        width: 400px;
+        height: 300px;
+        background-color:#996633;
+    }
+    #qkhdr{
+        text-shadow: 1px 1px 1px #000000;
+        margin-bottom: 10%;
+    }
+    </style>
 </head>
 
 <body>
 
-    <div class="p">
+    <div class="p conv">
 
-        <div class ="header">Richter to Joules/TNT</div>
+        <div class ="header" id="qkhdr">Richter to Joules/TNT</div>
 
         <input id ="input" type="text" placeholder="Enter Richter scale of earthquake" onchange='Earthquake_conv()'>
         <input id ="joules" type="text" readonly placeholder="equivalent energy in Joules">
