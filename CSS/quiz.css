@@ -46,6 +46,9 @@ html, body{
     top: 10%;
     right: 10%;
     width: 15%;
+    display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
 
     background: #fff;
     box-shadow:
@@ -66,5 +69,14 @@ html, body{
 }
 
 .card{
+    background:
+}
+#card1{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 15%;
+}
+#card2{
 
 }
