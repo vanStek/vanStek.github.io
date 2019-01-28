@@ -103,16 +103,22 @@
     #dice_link{
         background-color:#ff3300;
         text-shadow: 2px 2px 5px #000000;
+        height: 20%;
+        margin-right: 10%
     }
 
     #quake_link{
         background-color:#996633;
         text-shadow: 2px 2px 5px #000000;
+        height: 20%;
+        margin-right: 10%;
+
     }
 
     #quiz_link{
         background-color:#3333ff;
         text-shadow: 2px 2px 5px #000000;
+        height: 20%;
 
     }
 
