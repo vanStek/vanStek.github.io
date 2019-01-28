@@ -2,258 +2,27 @@
 <html lang-"en">
 	<head>
 		<meta charset="utf-8">
-		<title>VANSTEK_</title>
+		<title>Projects</title>
 		<link rel="stylesheet" type="text/css" href="./CSS/projects.css">
 		<link rel="stylesheet" type="text/css" href="./CSS/standard.css">
 		<link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
 
-
-		<script async>
-
-
-			//Earthquake Conversion script
-			function Earthquake_conv() {
-
-				var input = document.getElementById('input').value;
-			    var joules;
-			    var tnt;
-
-			    joules = Math.pow(10, 1.5 * input + 4.8);
-			    tnt = joules * 0.00000000024;
-
-			    document.getElementById("joules").value = (joules.toFixed(1) + ' joules');
-			    document.getElementById("TNT").value = (tnt.toFixed(3)) + ' tons of TNT';
-
-			}
-
-
-
-            //dice game code
-            var flag = 0;
-			//event listeners
-			window.onload = function(){
-				document.getElementById("roll_button").addEventListener("click", game_loop);
-
-				document.getElementById("play_again").addEventListener("click", restart)
-			}
-
-
-            //below are dice game functions and variables
-			var total = 0;
-
-			//shows rules
-			function rules() {
-				document.getElementById("directions").style.display= "block";
-				document.getElementById("agree").style.display= "block";
-				document.getElementById("head_directions").style.display = "block";
-				document.getElementById("start").style.display = "none";
-			}
-
-			//sets up game
-			function begin(){
-				document.getElementById("agree").style.display = "none";
-				document.getElementById("head_directions").style.display = "none";
-				document.getElementById("game").style.display = "block";
-
-			}
-
-			//rolls dice, main script
-            function roll(){
-				var die1 = Math.floor((Math.random() * 6) + 1);
-				var die2 = Math.floor((Math.random() * 6) + 1);
-				var die3 = Math.floor((Math.random() * 6) + 1);
-				var die4 = Math.floor((Math.random() * 6) + 1);
-
-				total = die1 + die2 + die3 + die4;
-
-
-				return die1 + ", " + die2 + ", " + die3 + ", and " + die4 + ", for a total of " + total + ".";
-            }
-
-			//restarts game
-			function restart(){
-				flag = 0;
-				document.getElementById("play_again").style.display = "none";
-				document.getElementById("roll_output").innerHTML = "";
-				document.getElementById("win_loss").innerHTML = "";
-				document.getElementById("roll_button").style.display = "block";
-				document.getElementById("roll_button").removeEventListener("click", second_loop);
-				document.getElementById("roll_button").addEventListener("click", game_loop);
-
-
-			}
-
-			//lots of spaghetti, could be rewritten much better
-			function game_loop(){
-				flag = 0;
-				//while loop is not needed but i do not want to touch it for fear of messing the code up
-				while (flag == 0){
-
-						document.getElementById("roll_output").innerHTML = roll();
-
-
-						if (total == 9 ||
-							total == 11||
-							total == 18||
-							total == 24) {
-							document.getElementById("win_loss").style.display = "block";
-							document.getElementById("win_loss").innerHTML = "You won.";
-							document.getElementById("play_again").style.display = "block";
-							document.getElementById("roll_button").style.display = "none";
-							flag = 1;
-						}
-						else if (total == 6 ||
-								 total == 12||
-								 total == 13||
-								 total == 17||
-							 	 total == 19||
-							 	 total == 23) {
-							document.getElementById("win_loss").style.display = "block";
-							document.getElementById("win_loss").innerHTML = "You lost.";
-							document.getElementById("play_again").style.display = "block";
-							document.getElementById("roll_button").style.display = "none";
-							flag = 1;
-						}
-						else{
-							document.getElementById("win_loss").style.display = "block";
-							document.getElementById("win_loss").innerHTML = "Roll again.";
-							goal_roll = total;
-							document.getElementById("first_roll").style.display = "block";
-							document.getElementById("first_roll").innerHTML = "Your first roll: " + goal_roll;
-							flag = 1;
-							}
-						}
-						flag = 0;
-						document.getElementById("roll_button").removeEventListener("click", game_loop);
-						document.getElementById("roll_button").addEventListener("click", second_loop);
-
-					}
-
-
-			function second_loop(){
-
-					document.getElementById("roll_output").innerHTML = roll();
-
-					if (total == goal_roll){
-						document.getElementById("win_loss").innerHTML = "You won.";
-						document.getElementById("play_again").style.display = "block";
-						document.getElementById("roll_button").style.display = "none";
-						document.getElementById("first_roll").style.display = "none";
-					}
-
-					else if (total == 13){
-						document.getElementById("win_loss").style.display = "block";
-						document.getElementById("win_loss").innerHTML = "You lost.";
-						document.getElementById("play_again").style.display = "block";
-						document.getElementById("roll_button").style.display = "none";
-						document.getElementById("first_roll").style.display = "none";
-					}
-					else{
-						document.getElementById("win_loss").innerHTML = "Roll again.";
-
-					}
-				}
-            //end dice game code
-
-
-
-
-
-            /* test, will use jquery for this
-			function show(element){
-
-				docment.getElementById(element).style.display = "block";
-			}
-            */
-
-		</script>
-
-
-
-
 	</head>
 
 	<body>
-		<div class = "container">
 
-			<div class="p">
-
-				<div class ="header">Richter to Joules/TNT</div>
-
-				<input id ="input" type="text" placeholder="Enter Richter scale of earthquake" onchange='Earthquake_conv()'>
-				<input id ="joules" type="text" readonly placeholder="equivalent energy in Joules">
-				<input id ="TNT" type="text" readonly placeholder="equivalent energy in tons of TNT">
-
-			</div>
-
-			<div class="p">
-
-
-    				<div class = "header">DICE GAME &#127922;</div>
-
-    				<div style="text-align: center;">
-    					<button id = "start" onclick="rules()">Click to play Dice Game</button>
-    				</div>
-
-    				<div id = "directions">
-    					<div id="head_directions" style="display: none;">
-    						This program will simulate a dice game for you
-    						that you can play yourself. The rules are simple:
-    					</div>
-
-    					<div>
-    						<ul>
-    						<li>You roll four dice and take the sum of your rolls.</li>
-    						<li>If you roll a 9, 11, 18, or 24, you win.</li>
-    						<li>If you roll a 6, 12, 13, 17, 19, or 23, you lose!</li>
-    						<li>If you land on any other number, then</li>
-    						you must continue to roll until you get the same number as your first roll again.</li>
-    						<li>If you roll a 13 though, you lose.</li>
-    					</div>
-    				</div>
-
-                    <!--
-                    game logic
-    				1. click continue, sets up game
-    				2. roll button appears
-    				3. onclick of roll, rolls and total is displayed
-    				4. total compared to losing values
-
-                    -->
-    				<div style="text-align: center;">
-    					<div style="display: inline-block;">
-    						<button id = "agree" onclick = "begin()" style = "display: none; margin: 2px;" >Click to continue</button>
-    					</div>
-    				</div>
-    				<div id="game">
-    					<div class = "button" id = "roll_button">Roll Dice</div>
-    					<div style = "display: flex">
-    						<div class= "output" style = "text-align: center; width: 25%;">Your roll: </div>
-    						<div id = "roll_output" class = "output"></div>
-    					</div>
-    					<div style ="display:flex">
-    						<div id = "first_roll"></div>
-    						<div id = "win_loss"></div>
-    					</div>
-    					<div id = "play_again" class = "button play_again">Play again?</div>
-
-    				</div>
-
-
-
-				<div id="game"></div>
-
-
-
-
-
-
-
-
-			</div>
-
+		<div class="zoomChar">
+			My Projects
 		</div>
+
+		<div class="Container">
+			<a class="zoom" id = "dice_link" href="./dice.html">Dice Game</a>
+			<a class="zoom" id = "quake_link" href="./conversion.html">Earthquake Converter</a>
+			<a class="zoom" id = "quiz_link" href="./quiz.html">Quiz Game</a>
+		</div>
+
+
 
 		<a class="home" href="./index.html">
 			Home
