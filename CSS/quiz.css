@@ -69,14 +69,27 @@ html, body{
 }
 
 .card{
-    background:
+    background: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: #e3ecf9;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-bottom: 8px;
+
 }
-#card1{
+#new{
     position: absolute;
     top: 10%;
     right: 10%;
     width: 15%;
 }
-#card2{
+#exit{
 
+}
+
+.question{
+
+    margin: 10px;
 }

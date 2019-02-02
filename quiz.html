@@ -8,8 +8,10 @@
         <link rel="stylesheet" type="text/css" href="./CSS/quiz.css" />
         <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
-        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
-        <script src="./javascript/quiz.js" async></script>
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+        </script>
 
     </head>
 
@@ -21,8 +23,8 @@
 
 
 
-        <div class="card" id="card1">
-            <div id="question">
+        <div class="card" id="exit">
+            <div class="question">
                 Question
             </div>
             <div class="answer">Answer 1</div>
@@ -31,12 +33,12 @@
             <div class="answer">Answer 4</div>
         </div>
 
+
         <div class="stack">
-            <!--set to same size as card1 or card2 using jsquery-->
         </div>
 
-        <div class = "card" id="card2">
-            <div id="question">
+        <div class = "card" id="new">
+            <div class="question">
                 Question
             </div>
             <div class="answer">Answer 1</div>
@@ -54,6 +56,22 @@
             Home
         </a>
 
+
+        <script type = "text/javascript">
+            $(document).ready(function(){
+                $("#start").click(function(){
+                  $("#new").animate({left: $(window).width()/2 - $("#new").width()*.55, top: $(window).height() * .175}, 200);
+
+                });
+
+
+
+
+            });
+        </script>
+
+
+        <script src="./javascript/quiz.js" async></script>
     </body>
 
 
