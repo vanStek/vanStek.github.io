@@ -40,7 +40,7 @@ html, body{
 }
 
 
-.stack{
+#stack{
 
     position: absolute;
     top: 10%;
@@ -65,7 +65,7 @@ html, body{
         /* Padding for demo purposes */
     padding: 15px;
     user-select: none;
-    overflow: auto;
+    height;
 }
 
 .card{
@@ -76,7 +76,12 @@ html, body{
     top: 10%;
     right: 10%;
     width: 15%;
+    overflow: auto;
 }
 #card2{
-
+    position: absolute;
+    top: 10%;
+    right: 80%;
+    width: 15%;
+    overflow: auto;
 }

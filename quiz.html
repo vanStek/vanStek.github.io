@@ -9,11 +9,23 @@
         <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
         <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
-        <script src="./javascript/quiz.js" async></script>
+
+
+
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
+        <script async>
+            $(document).ready(
+                function(){
+                    $("#stack").css({'height':($("#card1").height()+'%')});
+                });
+
+        </script>
 
     </head>
 
     <body>
+
+
 
         <div id="start">
             Start
@@ -31,7 +43,7 @@
             <div class="answer">Answer 4</div>
         </div>
 
-        <div class="stack">
+        <div id="stack">
             <!--set to same size as card1 or card2 using jsquery-->
         </div>
 
