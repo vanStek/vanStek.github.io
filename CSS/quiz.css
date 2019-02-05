@@ -77,29 +77,28 @@ html, body{
     padding-right: 12px;
     padding-left: 12px;
     padding-bottom: 8px;
+    position: absolute;
+    width: 15%;
+    overflow: auto;
 
 }
 #new{
-    position: absolute;
     top: 10%;
     right: 10%;
-    width: 15%;
-    overflow: auto;
 }
-<<<<<<< HEAD
-#card2{
-    position: absolute;
-    top: 10%;
-    right: 80%;
-    width: 15%;
-    overflow: auto;
-=======
-#exit{
 
+#back_card{
+    top: 10%;
+    right: 10%;
 }
+
+#exit{
+    top: 27.5%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
 
 .question{
-
     margin: 10px;
->>>>>>> 5191bf21ad425ea5778229522afed0b220ceba66
 }
