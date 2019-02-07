@@ -36,8 +36,8 @@
         </div>
 
 
-        <div class="stack">
-        </div>
+        <div id="stack"></div>
+
 
         <div class = "card" id="new">
             <div class="question">
@@ -61,12 +61,14 @@
 
         <script type = "text/javascript">
             $(document).ready(function(){
-                $("#start").click(function(){
-                  $("#new").animate({left: $(window).width()/2 - $("#new").width()*.55, top: $(window).height() * .175}, 200);
 
+                //start disappears on click replaced with next card
+                $("#start").click(function(){
+                  $("#new").css({ "right":"50%", "transform": "translateX(50%)", "top": "27.5%" });
+                  $(this).html("Next Card");
                 });
 
-
+            
 
 
             });
