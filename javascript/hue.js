@@ -1,12 +1,10 @@
 $('#get_lights').click(function(){
     $.getJSON('https://10.0.0.78/api/rVHJqasih6l0fzSXE4m8KfH9ljAMq6bXtZmRdcTf/lights', function (data) {
         console.log(data);
-        data = JSON.stringify(data);
-        $('#json').append(data);
-
-
-
+        var size = Object.keys(data).length;
+        console.log(size);
         });
+
 
 	})
 
