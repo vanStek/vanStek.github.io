@@ -26,6 +26,10 @@
 
     a:link, a:visited {
 
+        user-select: none;
+        -webkit-user-drag: none;
+
+
         font-family: Verdana;
         color: #cfd9df;
         text-decoration: none;
@@ -50,9 +54,14 @@
 
     }
 
-    a:hover {
+    a:hover{
+
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-drag: none;
         color:black;
         background-color: #76e0d6;
+
     }
 
     a.home{
@@ -91,7 +100,7 @@
     }
 
     .zoom {
-        transition: transform .2s, background-color .1s ease-in;
+        transition: transform .2s;
         padding: 2%;
         /*margin: 0 auto;*/
     }

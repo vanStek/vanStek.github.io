@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>hue_bot</title>
-    <link rel="stylesheet" type="text/css" href="./CSS/hue_bot.css">
+
     <link rel="stylesheet" type="text/css" href="./CSS/projects.css">
-    <link rel="stylesheet" type="text/css" href="./CSS/standard.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/hue_bot.css">
     <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -17,29 +17,38 @@
 <body style = "overflow: scroll">
 
     <div>
-        First, you must get the IP address of your hue bridge. To do this, go to https://discovery.meethue.com/
-        and copy this number: <br /><br />
-        <image src="./img/ip.png"></image><br /><br />
-        Then go to http://"pasted ip address"/debug/clip.html
-        <br />
-        My username: rVHJqasih6l0fzSXE4m8KfH9ljAMq6bXtZmRdcTf
+        <div>
+            First, you must get the IP address of your hue bridge. To do this, go to https://discovery.meethue.com/
+            and copy this number: <br /><br />
+            <image src="./img/ip.png"></image><br /><br />
+            Then go to http://"pasted ip address"/debug/clip.html
+            <br />
+            My username: rVHJqasih6l0fzSXE4m8KfH9ljAMq6bXtZmRdcTf
 
-        To get your username, you must
-        <br />
+            To get your username, you must
+            <br />
 
 
-        <br />
-        &#x1F6A7; UNDER CONSTRUCTION &#x1F6A7;
+            <br />
+            &#x1F6A7; UNDER CONSTRUCTION &#x1F6A7;
+        </div>
+
+        <button id = "get_lights">Click to get lights JSON</button>
+        <button id = "light_on">Click to turn on light 1 on</button>
+        <button id = "light_off">Click to turn on light 1 off</button>
+
+
+        <a class="home link" href="./index.html">
+            Home
+        </a>
     </div>
 
-    <button id = "get_lights">Click to get lights JSON</button>
-    <button id = "light_on">Click to turn on light 1 on</button>
-    <button id = "light_off">Click to turn on light 1 off</button>
+    <div id = "light_container">
+
+    </div>
 
 
-    <a class="home" href="./index.html">
-        Home
-    </a>
+
 
 </body>
 </html>
