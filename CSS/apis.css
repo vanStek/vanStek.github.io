@@ -139,7 +139,7 @@ a.home{
 .app{
     font-family: Ubuntu, sans-serif;
     font-size: 1.5vw;
-    height: 20vw;
+    height: auto;
     width: 42vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 3vw 0vw;
@@ -178,6 +178,7 @@ button{
     user-select: none;
     outline: none;
     user-drag: none;
+    padding: 0.25vw;
 }
 button:hover{
 
@@ -190,7 +191,8 @@ button:active{
 }
 
 h1{
-    margin: 0;
+    margin-bottom: 2vw;
+    margin-top: 0;
 }
 
 .contents{
@@ -222,7 +224,7 @@ h1{
 }
     #hide{
         visibility:hidden;
-        text-align: left; 
+        text-align: left;
     }
 
     #result{
