@@ -143,6 +143,7 @@
     background-color: transparent;
     border-radius: 0;
     box-shadow: none;
+    
   }
   #text-effect a:nth-child(1) {
     -webkit-clip-path: polygon(0 0, 100% 0, 50% 50%);
@@ -193,10 +194,11 @@
             animation: textani 1s forwards;
   }
   .text {
+    word-break: break-all;
     color: transparent;
     -webkit-text-stroke: 1px var(--color-of-text);
     text-stroke: 1px var(--color-of-text);
-    font-size: 12em;
+    font-size: 10vw;
     font-family: 'Staatliches', cursive;
   }
   .text:before {
