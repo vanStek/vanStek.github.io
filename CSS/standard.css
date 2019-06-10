@@ -136,7 +136,7 @@
     justify-content: center;
   }
   #text-effect a {
-    pointer-events: none;
+    
     cursor: default;
     position: absolute;
     width: 100%;
