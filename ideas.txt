@@ -1,0 +1,7 @@
+add tilt.js to nav tiles
+
+color scheme: https://paletton.com/#uid=54d0s0kllllaFw0g0qFqFg0w0aF
+
+add little icons, font awesome
+
+parallax scrolling/cool transitions to link anchors

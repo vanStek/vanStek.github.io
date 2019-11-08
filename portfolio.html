@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.ico" />
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <link rel="stylesheet" href="./CSS/portfolio.css" />
+    <link rel="stylesheet" href="./CSS/old-projects.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--dice game script-->
+    <script type="text/javascript" src="./JS/dice.js" async></script>
+    <!--earthquake conversion script-->
+    <script type="text/javascript" src="./JS/conversion.js" async></script>
+
+    <!--jQuery non slim and weather script-->
+    <script type="text/javascript" src="./JS/weather.js" async></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header">Portfolio</div>
+
+
+        <div class="row my-5">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="p">
+
+                    <div class="header">DICE GAME &#127922;</div>
+
+                    <div style="text-align: center;">
+                        <button id="start" onclick="rules()">Click to play Dice Game</button>
+                    </div>
+
+                    <div id="directions">
+
+                        <div id="head_directions" style="display: none;">
+                            This program will simulate a dice game for you
+                            that you can play yourself. The rules are simple:
+                        </div>
+
+                        <div>
+                            <ul>
+                                <li>You roll four dice and take the sum of your rolls.</li>
+                                <li>If you roll a 9, 11, 18, or 24, you win.</li>
+                                <li>If you roll a 6, 12, 13, 17, 19, or 23, you lose!</li>
+                                <li>If you land on any other number, then</li>
+                                you must continue to roll until you get the same number as your first roll again.</li>
+                                <li>If you roll a 13 though, you lose.</li>
+                        </div>
+
+                    </div>
+
+                    <div style="text-align: center;">
+
+                        <div style="display: inline-block;">
+                            <button id="agree" onclick="begin()" style="display: none; margin: 2px;">Click to
+                                continue</button>
+                        </div>
+
+                    </div>
+
+                    <div id="game">
+
+                        <div class="button" id="roll_button">Roll Dice</div>
+
+                        <div style="display: flex">
+
+                            <div class="output" style="text-align: center; width: 25%;">Your roll: </div>
+                            <div id="roll_output" class="output"></div>
+
+
+
+                        </div>
+
+                        <div style="display:flex">
+
+                            <div id="first_roll"></div>
+                            <div id="win_loss"></div>
+
+                        </div>
+
+                        <div id="play_again" class="button play_again">Play again</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="border-split"></div>
+        <div class="row my-5">
+            <div class="col-2"></div>
+            <div class="col-8 vh-75 project">
+                <div class="wrapper text-center ">
+                    <div class="app weather">
+
+                        <h1 class="contents center">Weather! (Uses wonky DarkSky API)</h1>
+
+                        <div class="center contents">
+                            <input id="address" type="text" placeholder="Enter Address/Zip" />
+                            <button id="request">Update</button>
+                        </div>
+
+                        <div class="horizontal">
+                            <div id="hide">
+                                Location:
+                                <br />Summary:
+                                <br />Temperature:
+                                <br />Chance of precip:
+                                <br />Humidity:
+                            </div>
+                            <div id="result"></div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row my-5">
+            <div class="col-2"></div>
+            <div class="col-8 vh-75 project">
+                <div class="p conv">
+
+                    <div class="header" id="qkhdr">Richter to Joules/TNT</div>
+
+                    <input id="input" type="text" placeholder="Enter Richter scale of earthquake"
+                        onchange='Earthquake_conv()'>
+                    <input id="joules" type="text" readonly placeholder="equivalent energy in Joules">
+                    <input id="TNT" type="text" readonly placeholder="equivalent energy in tons of TNT">
+
+                </div>
+
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
