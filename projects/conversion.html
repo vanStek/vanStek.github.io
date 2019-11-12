@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset = "utf-8">
+    <title>Earthquake Conversion</title>
+    <link rel="stylesheet" type="text/css"  href="./CSS/projects.css"/>
+    <link rel="stylesheet" type="text/css"  href="./CSS/standard.css"/>
+    <script src="./javascript/conversion.js" async></script>
+    <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
+
+    <style>
+
+        .conv{
+            width: 400px;
+            height: 300px;
+            background-color:#996633;
+        }
+        #qkhdr{
+            text-shadow: 1px 1px 1px #000000;
+            margin-bottom: 10%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="p conv">
+
+        <div class ="header" id="qkhdr">Richter to Joules/TNT</div>
+
+        <input id ="input" type="text" placeholder="Enter Richter scale of earthquake" onchange='Earthquake_conv()'>
+        <input id ="joules" type="text" readonly placeholder="equivalent energy in Joules">
+        <input id ="TNT" type="text" readonly placeholder="equivalent energy in tons of TNT">
+
+    </div>
+
+    <a class="home" href="./index.html">
+        Home
+    </a>
+
+</body>
+
+
+</html>
