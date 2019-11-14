@@ -2,8 +2,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 .vh50 {
     min-height: 50vh;
 }
@@ -26,7 +24,6 @@ html {
     word-break: break-word;
     padding: 10px;
     font-size: 5vmin;
-
 }
 
 .project {
@@ -39,7 +36,7 @@ html {
     word-break: break-word;
     padding: 10px;
 
-    transition: all .05s ease-in-out;
+    transition: all 0.05s ease-in-out;
 }
 
 .project:hover {
@@ -60,27 +57,30 @@ html {
     width: 100%;
     text-align: center;
     font-size: 8vh;
-    padding: 5vh 0% 6vh;
+    line-height: 1.5em;
+    padding: 12vh 0% 6vh;
     user-select: none;
 }
 
 .name b {
     font-weight: normal;
     font-size: 12vh;
+
 }
 
 .nav-outer {
     color: rgb(185, 206, 255);
     height: 15vh;
-    width: 30%;
-    margin: 0 10%;
+    width: auto;
+    min-width: 20vw;
+    margin: 0 auto;
     background-image: linear-gradient(to bottom right,
             rgb(164, 65, 234),
             rgb(67, 104, 192));
     border-radius: 1px;
     text-align: center;
     user-select: none;
-
+    white-space: nowrap;
     -webkit-box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
     box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
@@ -94,7 +94,7 @@ html {
     word-break: break-all;
     width: auto;
     font-family: 'Inconsolata', monospace;
-    font-size: 2.8vh;
+    font-size: 3.4vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -162,14 +162,13 @@ html {
     filter: blur(2px);
     opacity: 0.4;
     width: 50%;
-    margin: 200px 0px;
+    margin: 100px 0px 20;
 }
 
 #portfolio,
 #about {
     min-height: 90vh;
 }
-
 
 #contact i {
     color: rgba(0, 0, 0, 0.884);
