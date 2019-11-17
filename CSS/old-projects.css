@@ -1,288 +1,184 @@
-html {
+html, body{
+    height: 100%;
+    margin: 0px;
+    background-image: linear-gradient(to right, #ffffff, #d9dbdd);
+    background-repeat: no-repeat;
+    //background-attachment: fixed;
+
+
+}
+html{
     overflow: auto;
 }
 
 
-.p {
-    font-family: Helvetica;
-    font-size: 1.5vw;
-    height: auto;
-    width: 65%;
+    .p {
+        font-family: Helvetica;
+        font-size: 1.5vw;
+        height: auto;
+        width: 65%;
 
-    padding: 15px;
+        padding: 15px;
 
-    margin: 0% auto;
-    display: block;
-    overflow: hidden;
+        margin: 2% auto 15%;
+        display: block;
+        overflow: v;
 
-    border-radius: 4px;
-    background-color: #ff6200;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+        border-radius: 4px;
+        background-color: #ff6200;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 
-.header {
-    font-family: Helvetica;
-    font-size: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    margin: auto;
-    padding: 10px;
-}
+    .header{
+        font-family: Helvetica;
+        font-size: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        margin: auto;
+        padding: 10px;
+    }
 
-.button {
-    background-color: inherit;
-    border-radius: 5px;
-    border: groove;
-    padding: 10px;
-    width: 50%;
-    text-align: center;
-    margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    display: inherit;
-    cursor: pointer;
-}
+    .button{
+        background-color: inherit;
+        border-radius: 5px;
+        border: groove;
+        padding: 10px;
+        width: 50%;
+        text-align: center;
+        margin: auto;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        display: inherit;
+        cursor: pointer;
+    }
 
-.button:active {
-    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-    transform: translateY(2px);
-}
+    .button:active{
+        box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+        transform: translateY(2px);
+    }
+    .button.play_again{
+        display: none;
+        margin: 10px auto;
+        width: 25%;
 
-.button.play_again {
-    display: none;
-    margin: 10px auto;
-    width: 25%;
+    }
 
-}
+    .output{
+        font-family: Helvetica;
+        font-size: 1.5vw;
+        text-align: center;
 
-.output {
-    font-family: Helvetica;
-    font-size: 1.5vw;
-    text-align: center;
+        width: 65%;
+        padding: 15px;
 
-    width: 65%;
-    padding: 15px;
+        margin: 5px 1px 5px 1px;
+        display: block;
+        overflow: auto;
 
-    margin: 5px 1px 5px 1px;
-    display: block;
-    overflow: auto;
+        border-radius: 4px;
+        background-color: #ff6200;
 
-    border-radius: 4px;
-    background-color: #ff6200;
+    }
 
-}
+    #roll_output{
+        width: 75%;
+    }
 
-#roll_output {
-    width: 75%;
-}
+    #first_roll{
+        width: 28%;
+        height: auto;
 
-#first_roll {
-    width: 28%;
-    height: auto;
+        display: none;
+        font-family: Helvetica;
+        font-size: 1.5vw;
+        text-align: center;
+        margin: 2px;
+        border-radius: 4px;
+        background-color: #ff6200;
+    }
 
-    display: none;
-    font-family: Helvetica;
-    font-size: 1.5vw;
-    text-align: center;
-    margin: 2px;
-    border-radius: 4px;
-    background-color: #ff6200;
-}
-
-/*not sure if will be used*/
-#game {
-    background-color: #ffa205;
+    /*not sure if will be used*/
+    #game{
+ 	background-color: #ffa205;
     padding: 10px;
     margin: 5px;
     border-radius: 4px;
-    border-style: solid;
+	border-style: solid;
     display: none;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: auto;
-}
+    }
 
-#directions {
-    background-color: #ffa200;
-    padding: 10px;
-    margin: auto;
-    border-radius: 4px;
-    display: none;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+    #directions{
+        background-color: #ffa200;
+        padding: 10px;
+        margin: auto;
+        border-radius: 4px;
+        display: none;
+	     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
 
-}
-
-
-#win_loss {
-    text-align: center;
-    font-size: 2vw;
-    font-family: impact;
-    margin: auto;
-    width: 72%;
-    display: none;
-    height: auto;
-    border-radius: 4px;
+    }
 
 
-}
-
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+    #win_loss{
+      text-align: center;
+      font-size: 2vw;
+      font-family: impact;
+      margin: auto;
+      width: 72%;
+      display: none;
+      height: auto;
+      border-radius: 4px;
 
 
+    }
 
-.proj_container {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    width: 70%;
-    height: 100%;
-    margin: auto;
-}
-
-
-#dice_link {
-    background-color: #ff3300;
-    text-shadow: 2px 2px 5px #000000;
-    height: 20%;
-
-}
-
-#quake_link {
-    background-color: #996633;
-    text-shadow: 2px 2px 5px #000000;
-    height: 20%;
-
-}
-
-#hue_link {
-    background-color: #2323b2;
-    text-shadow: 2px 2px 5px #000000;
-    height: 20%;
-
-}
-
-#api_tests {
-    background-color: #a80b20;
-    text-shadow: 2px 2px 5px #000000;
-    height: 20%;
-
-}
-
-
-.conv {
-    background-color: #996633;
-}
-
-#qkhdr {
-    text-shadow: 1px 1px 1px #000000;
-
-}
-
-
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-
-.app {
-    font-family: Ubuntu, sans-serif;
-    font-size: 1.5vw;
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: #ffffff;
-    border-radius: 4px;
-    padding: 4vw;
-}
-
-
-input {
-    font-size: 1.25vw;
-    width: 40%;
-    height: 35%;
-    padding: 12px 20px;
-    margin: 0px 8px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    box-shadow: inset 0 0 4px;
-    user-select: none;
-    user-drag: none;
-    outline: none;
-}
-
-.app button {
-    font-family: Nunito, sans-serif;
-    font-weight: bolder;
-    font-size: 1.25vw;
-    width: 40%;
-    height: 35%;
-    background-color: #57a29b;
-    border: none;
-    box-sizing: border-box;
-    border-radius: 4px;
-    user-select: none;
-    outline: none;
-    user-drag: none;
-    padding: 0.25vw;
-}
-
-.app button:hover {
-
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.app button:active {
-    box-shadow: inset 0 0 4px;
-    background-color: #76e0d6;
-}
-
-.app h1 {
-    margin-bottom: 2vw;
-    margin-top: 0;
-}
-
-.app .contents {
-    height: 100%;
-    width: 100%;
-}
-
-
-.app .horizontal {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.app .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    input[type=text]{
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
 
 
+    .proj_container{
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        width:70%;
+        height:100%;
+        margin: auto;
+    }
 
-.app .weather {
-    margin: 0vw !important;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-}
+    
+    #dice_link{
+        background-color:#ff3300;
+        text-shadow: 2px 2px 5px #000000;
+        height: 20%;
 
-.app #hide {
-    visibility: hidden;
-    text-align: left;
-}
+    }
 
-#result {
-    text-align: right;
-}
+    #quake_link{
+        background-color:#996633;
+        text-shadow: 2px 2px 5px #000000;
+        height: 20%;
+
+    }
+
+    #hue_link{
+        background-color:#2323b2;
+        text-shadow: 2px 2px 5px #000000;
+        height: 20%;
+
+    }
+
+    #api_tests{
+        background-color:#a80b20;
+        text-shadow: 2px 2px 5px #000000;
+        height: 20%;
+
+    }

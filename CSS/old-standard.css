@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
+body {
+  height: 100%;
+
+  background-image: linear-gradient(to right, #cfd9df, #eff4f7);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+
+}
+
+
+p {
+  font-family: 'Times New Roman';
+  font-size: 1.5vw;
+  padding: 15px;
+  display: inline-block;
+  height: 200px;
+  width: 100%;
+
+  border-radius: 2px;
+  background-color: #d8d7ed;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+a:link,
+a:visited {
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+
+  font-family: Verdana;
+  color: #cfd9df;
+  text-decoration: none;
+  font-size: 50px;
+  font-size: 1.75vw;
+
+  border-radius: 25px;
+  background-color: #57a29b;
+
+  text-align: center;
+  vertical-align: middle;
+
+  width: 33%;
+  height: 200px;
+  /*border: 2px solid black;*/
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+a:hover {
+
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-drag: none;
+  color: black;
+  background-color: #76e0d6;
+
+}
+
+a.home {
+  position: fixed;
+  bottom: 1%;
+  right: 1%;
+  height: 5%;
+  width: 10%;
+}
+
+
+
+.Container {
+
+  margin: auto;
+  display: flex;
+  width: 70%;
+  height: 100%;
+
+}
+
+
+
+.zoomChar {
+  transition: transform ease-in-out 1s, opacity ease-in-out .3s;
+  margin: 3% auto 7% auto;
+
+  font-family: "Courier";
+  text-align: center;
+  font-size: 4vw;
+
+}
+
+.zoomChar:hover {
+  transform: scale(.01);
+  opacity: 0;
+
+}
+
+.zoom {
+  transition: transform .2s;
+  padding: 2%;
+  /*margin: 0 auto;*/
+}
+
+.zoom:hover {
+  transform: scale(1.25);
+
+}
+
+.slide {
+  transition: transform .3s;
+}
+
+.slide:active {
+  transform: translate(-100px)
+}
+
+
+
+/** code by webdevtrick ( https://webdevtrick.com ) **/
+/** many thanks, makes my website look more legeit :^)**/
+
+#text-effect {
+  margin: 5% 0% 1% 0%;
+  --color-of-text: #008f99;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#text-effect a {
+  user-select: none;
+  cursor: default;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+
+}
+
+#text-effect a:nth-child(1) {
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 50%);
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+}
+
+#text-effect a:nth-child(2) {
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+  clip-path: polygon(100% 0, 100% 100%, 50% 50%);
+}
+
+#text-effect a:nth-child(3) {
+  -webkit-clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+  clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+}
+
+#text-effect a:nth-child(4) {
+  -webkit-clip-path: polygon(0 0, 50% 50%, 0 100%);
+  clip-path: polygon(0 0, 50% 50%, 0 100%);
+}
+
+#text-effect a:hover {
+  -webkit-clip-path: none;
+  clip-path: none;
+  z-index: 2;
+}
+
+#text-effect a:nth-child(1):hover~.text:before {
+  --from: circle(0% at 50% 0%);
+  --to: circle(150% at 0% 50%);
+  -webkit-animation: textani 1s forwards;
+  animation: textani 1s forwards;
+}
+
+#text-effect a:nth-child(2):hover~.text:before {
+  --from: circle(0% at 150% 50%);
+  --to: circle(100% at 50% 50%);
+  -webkit-animation: textani 1s forwards;
+  animation: textani 1s forwards;
+}
+
+#text-effect a:nth-child(3):hover~.text:before {
+  --from: circle(0% at 50% 100%);
+  --to: circle(150% at 0% 50%);
+  -webkit-animation: textani 1s forwards;
+  animation: textani 1s forwards;
+}
+
+#text-effect a:nth-child(4):hover~.text:before {
+  --from: circle(0% at 0% 50%);
+  --to: circle(150% at 0% 50%);
+  -webkit-animation: textani 1s forwards;
+  animation: textani 1s forwards;
+}
+
+.text {
+  word-break: break-all;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-of-text);
+  text-stroke: 1px var(--color-of-text);
+  font-size: 10vw;
+  font-family: 'Staatliches', cursive;
+}
+
+.text:before {
+  content: attr(data-text);
+  position: absolute;
+}
+
+@keyframes textani {
+  0% {
+    -webkit-clip-path: var(--from);
+    clip-path: var(--from);
+  }
+
+  100% {
+    -webkit-clip-path: var(--to);
+    clip-path: var(--to);
+    color: var(--color-of-text);
+  }
+}

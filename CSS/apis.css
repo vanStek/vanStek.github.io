@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body{
+    height: 100%;
+
+    background-image: linear-gradient(to right, #cfd9df, #eff4f7);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
+}
+
+
+p {
+    font-family: Times New Roman;
+    font-size: 1.5vw;
+    padding: 15px;
+    display: inline-block;
+    height: 200px;
+    width: 100%;
+
+    border-radius: 2px;
+    background-color: #d8d7ed;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+a:link, a:visited {
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+
+    font-family: Verdana;
+    color: #cfd9df;
+    text-decoration: none;
+    font-size: 50px;
+    font-size: 1.75vw;
+
+    border-radius: 25px;
+    background-color:#57a29b;
+
+    text-align: center;
+    vertical-align: middle;
+
+    width: 33%;
+    height: 200px;
+    //border: 2px solid black;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+a:hover{
+
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-drag: none;
+    color:black;
+    background-color: #76e0d6;
+
+}
+
+a.home{
+    position: fixed;
+    bottom: 1%;
+    right: 1%;
+    height: 5%;
+    width: 10%;
+}
+
+
+
+.Container{
+
+    margin: auto;
+    display: flex;
+    width:70%;
+    height:100%;
+
+}
+
+
+
+ .zoomChar{
+    transition: transform ease-in-out 1s, opacity ease-in-out .3s;
+    margin: 3% auto 7% auto;
+
+    font-family: "Courier";
+    text-align: center;
+    font-size:4vw;
+
+}
+
+.zoomChar:hover{
+    transform: scale(.01);
+    opacity: 0;
+
+}
+
+.zoom {
+    transition: transform .2s;
+    padding: 2%;
+    /*margin: 0 auto;*/
+}
+.zoom:hover {
+    transform: scale(1.25);
+
+}
+
+
+
+
+
+
+.slide{
+    transition: transform .3s;
+}
+
+.slide:active{
+    transform: translate( -100px)
+}
+
+
+.wrapper{
+    height: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.app{
+    font-family: Ubuntu, sans-serif;
+    font-size: 1.5vw;
+    height: auto;
+    width: 42vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 3vw 0vw;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 4vw;
+}
+
+
+input{
+    font-size: 1.25vw;
+    width: 40%;
+    height: 35%;
+    padding: 12px 20px;
+    margin: 0px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 4px;
+    user-select: none;
+    user-drag: none;
+    outline: none;
+}
+
+button{
+    font-family: Nunito, sans-serif;
+    font-weight: bolder;
+    font-size: 1.25vw;
+    width: 40%;
+    height: 35%;
+    background-color: #57a29b;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    user-select: none;
+    outline: none;
+    user-drag: none;
+    padding: 0.25vw;
+}
+button:hover{
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+button:active{
+    box-shadow: inset 0 0 4px;
+    background-color: #76e0d6;
+}
+
+h1{
+    margin-bottom: 2vw;
+    margin-top: 0;
+}
+
+.contents{
+    height: 100%;
+    width: 100%;
+}
+
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.app.weather{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    #hide{
+        visibility:hidden;
+        text-align: left;
+    }
+
+    #result{
+        text-align: right;
+    }
+
+
+
+.app.b{}
+
+.app.c{}
