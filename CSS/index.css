@@ -29,6 +29,11 @@ html {
     word-break: break-word;
     padding: 0.75em;
     font-size: 5vmin;
+    line-height: 1.25em;
+}
+
+.about h1 {
+    font-size: 1.25em;
 }
 
 .project {
