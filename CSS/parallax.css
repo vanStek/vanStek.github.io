@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to bottom, rgb(82, 62, 231) 20%, #2AF598, #fec051, #FEE140, #FA709A);
+    background: linear-gradient(to bottom, rgb(82, 62, 231), #2AF598, #fec051, #FEE140, #FA709A);
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -12,5 +12,5 @@ body:before {
     bottom: 0;
     width: 100%;
     z-index: -1;
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.05), rgb(60, 182, 209) 50%);
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.05) 40%, rgb(60, 182, 209) 95%);
 }

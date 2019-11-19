@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono&display=swap');
+/* 
+font-family: 'Roboto Mono', monospace;
+font-family: 'Quicksand', sans-serif;
+ */
+
 
 :root {
     --bg-color: #162856;
