@@ -1,11 +1,46 @@
-html {
-    scroll-behavior: smooth;
-    overflow-x:hidden;
+@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono&display=swap');
+/* 
+font-family: 'Roboto Mono', monospace;
+font-family: 'Quicksand', sans-serif;
+ */
+
+
+:root {
+    --bg-color: #162856;
 }
 
-.vh50 {
+
+body {
+    background-attachment: fixed;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #567cda 60%, #17398f);
+}
+
+.vh-75 {
+    height: 75vh;
+}
+
+.vh-50 {
+    height: 50vh;
     min-height: 50vh;
 }
+
+.vh-25 {
+    height: 25vh;
+}
+
+.vh-10 {
+    height: 10vh;
+}
+
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 
 .section-title {
     text-align: center;
