@@ -73,10 +73,10 @@ html {
   background-image: linear-gradient(
     to bottom left,
     rgba(255, 255, 255, 0) 2%,
-    rgb(75, 75, 75) 2.1%,
-    rgb(255, 255, 255) 2.2% 98%,
-    rgb(75, 75, 75) 98.1%,
-    rgba(255, 255, 255, 0) 98.2%
+    rgba(80, 80, 80, 0.349) 2.1%,
+    rgb(255, 255, 255) 2.5% 97.5%,
+    rgba(80, 80, 80, 0.349) 97.9%,
+    rgba(255, 255, 255, 0) 98%
   );
   color: rgb(42, 42, 42);
   border-radius: 3px;
