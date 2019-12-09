@@ -1,247 +1,252 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand|Roboto+Mono&display=swap");
 /* 
 font-family: 'Roboto Mono', monospace;
 font-family: 'Quicksand', sans-serif;
  */
 
-
 :root {
-    --bg-color: #162856;
+  --bg-color: #162856;
 }
-
-
-
-
 
 /* parallax */
 body {
-    background: linear-gradient(to bottom, rgb(82, 62, 231), #2AF598, #fec051, #FEE140, #FA709A);
-    background-size: 100%;
-    background-repeat: no-repeat;
+  background: linear-gradient(
+    to bottom,
+    rgb(82, 62, 231),
+    #2af598,
+    #fec051,
+    #fee140,
+    #fa709a
+  );
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 body:before {
-    content: '';
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.05) 40%, rgb(60, 182, 209) 95%);
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.05) 40%,
+    rgb(60, 182, 209) 95%
+  );
 }
 
 .vh-75 {
-    height: 75vh;
+  height: 75vh;
 }
 
 .vh-50 {
-    height: 50vh;
-    min-height: 50vh;
+  height: 50vh;
+  min-height: 50vh;
 }
 
 .vh-25 {
-    height: 25vh;
+  height: 25vh;
 }
 
 .vh-10 {
-    height: 10vh;
+  height: 10vh;
 }
-
 
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-
 .section-title {
-    text-align: center;
-    font-size: 2em;
-    margin: 0px 0px 3vh;
-    font-size: 8vh;
-    font-family: 'Staatliches', cursive;
+  text-align: center;
+  font-size: 2em;
+  margin: 0px 0px 3vh;
+  font-size: 8vh;
+  font-family: "Staatliches", cursive;
 }
 
 .about {
-    background-color: rgba(255, 255, 255, 0.292);
-    background-image: linear-gradient(to bottom left,
-            rgba(255, 255, 255, 0),
-            rgb(255, 255, 255) 5% 90%,
-            rgba(255, 255, 255, 0));
-    color: rgb(42, 42, 42);
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
-    margin: 10px 0px 0px;
-    word-break: break-word;
-    padding: 0.75em;
-    font-size: 5vmin;
-    font-family: 'Quicksand', sans-serif;
-    line-height: 1.25em;
+  background-color: rgba(255, 255, 255, 0.292);
+  background-image: linear-gradient(
+    to bottom left,
+    rgba(255, 255, 255, 0) 2%,
+    rgb(255, 255, 255) 2.2% 98%,
+    rgba(255, 255, 255, 0) 98.2%
+  );
+  color: rgb(42, 42, 42);
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
+  margin: 10px 0px 0px;
+  word-break: break-word;
+  padding: 0.75em;
+  font-size: 5vmin;
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.25em;
 }
 
 .about h1 {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.25em;
-    color: rgba(0, 0, 0, 0.857);
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.25em;
+  color: rgba(0, 0, 0, 0.857);
 }
 
 .project {
-    background-color: white;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
-    margin: 10px 0px 0px;
-    word-break: break-word;
-    padding: 10px;
+  background-color: white;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 13px -4px rgba(0, 0, 0, 0.75);
+  margin: 10px 0px 0px;
+  word-break: break-word;
+  padding: 10px;
 
-    transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .project h4 {
-    text-align: center;
-
+  text-align: center;
 }
 
 .project:hover {
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
-
-
 .nav-row {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .name {
-    font-family: 'Staatliches', cursive;
-    color: rgb(25, 14, 61);
-    word-break: break-word;
-    width: 100%;
-    text-align: center;
-    font-size: 8vh;
-    line-height: 1.5em;
-    padding: 12vh 0% 6vh;
-    user-select: none;
+  font-family: "Staatliches", cursive;
+  color: rgb(25, 14, 61);
+  word-break: break-word;
+  width: 100%;
+  text-align: center;
+  font-size: 8vh;
+  line-height: 1.5em;
+  padding: 12vh 0% 6vh;
+  user-select: none;
 }
 
 .name b {
-    font-weight: normal;
+  font-weight: normal;
 
-    font-size: calc(100px + 13vh);
+  font-size: calc(100px + 13vh);
 }
 
 .nav-outer {
-    color: rgb(185, 206, 255);
-    height: 15vh;
-    width: auto;
-    min-width: 20vw;
-    margin: 0 auto;
-    background-image: linear-gradient(to bottom right,
-            rgb(164, 65, 234),
-            rgb(67, 104, 192));
-    border-radius: 1px;
-    text-align: center;
-    user-select: none;
-    white-space: nowrap;
-    -webkit-box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
-    box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
+  color: rgb(185, 206, 255);
+  height: 15vh;
+  width: auto;
+  min-width: 20vw;
+  margin: 0 auto;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(164, 65, 234),
+    rgb(67, 104, 192)
+  );
+  border-radius: 1px;
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+  -webkit-box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
+  box-shadow: 0px 7px 64px -21px rgba(0, 0, 0, 1);
 
-    /* tilt.js CSS */
-    transform-style: preserve-3d;
+  /* tilt.js CSS */
+  transform-style: preserve-3d;
 }
 
 .nav-inner {
-    transform: translateZ(30px);
-    word-break: break-all;
-    width: auto;
-    font-family: 'Inconsolata', monospace;
-    font-size: calc(12px + 2vh);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    height: 100%;
-    min-width: 50px;
+  transform: translateZ(30px);
+  word-break: break-all;
+  width: auto;
+  font-family: "Inconsolata", monospace;
+  font-size: calc(12px + 2vh);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  min-width: 50px;
 }
 
 /*link styling*/
 .nav-row a:link {
-    text-decoration: none;
-    color: rgb(185, 206, 255);
+  text-decoration: none;
+  color: rgb(185, 206, 255);
 }
 
 .nav-row a:visited {
-    text-decoration: none;
-    color: rgb(185, 206, 255);
+  text-decoration: none;
+  color: rgb(185, 206, 255);
 }
 
 .nav-row a:hover {
-    text-decoration: none;
-    color: rgb(185, 206, 255);
+  text-decoration: none;
+  color: rgb(185, 206, 255);
 }
 
 .nav-row a:active {
-    text-decoration: none;
-    color: rgb(185, 206, 255);
+  text-decoration: none;
+  color: rgb(185, 206, 255);
 }
 
 .contact a:link {
-    text-decoration: none;
-    color: rgb(185, 206, 255);
+  text-decoration: none;
+  color: rgb(185, 206, 255);
 }
 
 .contact a:visited {
-    text-decoration: none;
-    color: rgb(185, 206, 255);
+  text-decoration: none;
+  color: rgb(185, 206, 255);
 }
 
 .contact a:hover {
-    text-decoration: none;
-    color: rgb(157, 173, 209);
+  text-decoration: none;
+  color: rgb(157, 173, 209);
 }
 
 .contact a:active {
-    text-decoration: none;
-    color: rgb(185, 206, 255);
+  text-decoration: none;
+  color: rgb(185, 206, 255);
 }
 
 .contact {
-    display: flex;
-    justify-content: center;
-    transition: all 0.15s ease-in-out;
+  display: flex;
+  justify-content: center;
+  transition: all 0.15s ease-in-out;
 }
 
 .grow {
-    transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 
 .grow:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .design {
-    filter: blur(2px);
-    opacity: 0.4;
-    width: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  filter: blur(2px);
+  opacity: 0.4;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #portfolio,
 #about {
-    min-height: 90vh;
+  min-height: 90vh;
 }
 
 #contact i {
-    color: rgba(0, 0, 0, 0.884);
+  color: rgba(0, 0, 0, 0.884);
 }
