@@ -126,7 +126,7 @@ html {
 }
 
 .name {
-  font-family: "Staatliches", cursive;
+  font-family: "Staatliches", cursive, Helvetica, sans-serif;
   color: rgb(25, 14, 61);
   word-break: break-word;
   width: 100%;
