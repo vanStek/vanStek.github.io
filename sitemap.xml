@@ -6,46 +6,150 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 
-
 <url>
-  <loc>https://vanstek.github.io/</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/</loc>
+  <lastmod>2020-01-21T18:46:57+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://vanstek.github.io/projects/</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/voicebox/</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vanstek.github.io/projects/dice.html</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/projects/</loc>
+  <lastmod>2019-11-17T21:15:20+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/eyesight.php</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vanstek.github.io/projects/conversion.html</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/voicebox/pirate.php</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vanstek.github.io/projects/huebot.html</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/voicebox/messageboards.php</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vanstek.github.io/projects/apitest.html</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/voicebox/leaderboards.php</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vanstek.github.io/index.html</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/projects/dice.html</loc>
+  <lastmod>2019-11-17T21:15:31+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vanstek.github.io/projects/index.html</loc>
-  <lastmod>2019-11-19T21:37:18+00:00</lastmod>
+  <loc>https://vanstek.dev/projects/conversion.html</loc>
+  <lastmod>2019-11-17T21:16:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/projects/huebot.html</loc>
+  <lastmod>2019-11-17T21:16:52+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/projects/apitest.html</loc>
+  <lastmod>2019-11-17T21:16:37+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/index.html</loc>
+  <lastmod>2020-01-21T18:46:57+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/index.php</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
   <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/board.php?board_id=1</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/board.php?board_id=2</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/board.php?board_id=3</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/projects/index.html</loc>
+  <lastmod>2019-11-17T21:15:20+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=7</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=6</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=8</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=9</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=10</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=1</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=2</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=3</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=4</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=5</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=11</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://vanstek.dev/voicebox/thread.php?threadID=12</loc>
+  <lastmod>2020-01-21T19:48:12+00:00</lastmod>
+  <priority>0.41</priority>
 </url>
 
 
