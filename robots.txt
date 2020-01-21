@@ -1,3 +1,5 @@
+Sitemap: https://vanstek.dev/sitemap.xml
 User-Agent: *
 Allow: /
+
 
