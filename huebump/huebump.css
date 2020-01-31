@@ -3,7 +3,14 @@
 body {
     padding: 0px;
     background: rgb(112, 146, 255);
-    background: linear-gradient(308deg, rgba(112, 146, 255, 1) 0%, rgba(88, 78, 157, 1) 20%, rgba(137, 63, 119, 1) 24.93%, rgba(253, 29, 29, 1) 25%, rgba(252, 176, 69, 1) 100%);
+    background: linear-gradient(
+        308deg,
+        rgba(112, 146, 255, 1) 0%,
+        rgba(88, 78, 157, 1) 20%,
+        rgba(137, 63, 119, 1) 24.93%,
+        rgba(253, 29, 29, 1) 25%,
+        rgba(252, 176, 69, 1) 100%
+    );
 }
 
 .title {
@@ -14,7 +21,7 @@ body {
     align-items: center;
 }
 
-.title>h1 {
+.title > h1 {
     word-wrap: break-word;
     word-break: break-all;
     font-size: 4em;
@@ -22,7 +29,7 @@ body {
     user-select: none;
 }
 
-.title>img {
+.title > img {
     margin: 0px 0px 0px 1em;
     height: 5em;
 }
