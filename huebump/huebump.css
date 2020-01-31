@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
 body {
+    padding: 0px;
     background: rgb(112, 146, 255);
     background: linear-gradient(308deg, rgba(112, 146, 255, 1) 0%, rgba(88, 78, 157, 1) 20%, rgba(137, 63, 119, 1) 24.93%, rgba(253, 29, 29, 1) 25%, rgba(252, 176, 69, 1) 100%);
 }
 
 .title {
-    padding: 3vh;
+    padding: 3vh 0px;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .title>h1 {
-    font-size: 5em;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 4em;
     font-family: 'Orbitron', sans-serif;
     user-select: none;
+}
+
+.title>img {
+    margin: 0px 0px 0px 1em;
+    height: 5em;
 }
