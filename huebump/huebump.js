@@ -85,6 +85,25 @@ function toggle_on() {
 
 // huebump code
 
-$(".get-lights").click(function() {
-    // use this link to get local bridge IP: https://www.meethue.com/api/nupnp
+
+
+//IP of the bridge
+const bridgeIP = "";
+
+
+//api call returns json. internalipaddress is the IP of the bridge
+$(".get-lights").click(function(){
+    $(".get-lights").html("<img class='load-img d-none d-md-block' src='./speaker.png'>");
+      $.getJSON(" https://www.meethue.com/api/nupnp", function(result){
+        console.log(result);
+        if(result) {
+            try {
+                let bridgeIP = JSON.parse(result).internalipaddress;
+                console.log(bridgeIP);
+            } catch(e) {
+                console.log(e);
+                $(".get-lights").html("Could not find hue bridge. Try again?")
+            }
+        }
+    });
 })
