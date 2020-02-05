@@ -1,3 +1,5 @@
+// old hue code
+
 $('#get_lights').click(function() {
     $.getJSON(
         'https://10.0.0.78/api/rVHJqasih6l0fzSXE4m8KfH9ljAMq6bXtZmRdcTf/lights',
@@ -77,3 +79,12 @@ function toggle_on() {
         event.target.value = 'OFF';
     }
 }
+
+
+
+
+// huebump code
+
+$(".get-lights").click(function() {
+    // use this link to get local bridge IP: https://www.meethue.com/api/nupnp
+})

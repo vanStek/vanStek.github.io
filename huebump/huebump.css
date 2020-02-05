@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
-
+html {
+    height: 100%;
+}
 body {
     padding: 0px;
     background: rgb(112, 146, 255);
@@ -11,7 +13,13 @@ body {
         rgba(253, 29, 29, 1) 25%,
         rgba(252, 176, 69, 1) 100%
     );
+
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
 
 .title {
     padding: 3vh 0px;
@@ -22,6 +30,8 @@ body {
 }
 
 .title > h1 {
+    color: rgba(0, 0, 0, 0.911); 
+    text-shadow: rgba(0, 0, 0, 0.288) 1px 2px;
     word-wrap: break-word;
     word-break: break-all;
     font-size: 4em;
@@ -33,3 +43,47 @@ body {
     margin: 0px 0px 0px 1em;
     height: 5em;
 }
+.title > img.firstimg {
+    margin: 0px 1em 0px 0em;
+    transform: scaleX(-1);
+}
+
+
+.program-body{
+    margin: 3vh 0vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.get-lights{
+    color: rgb(230, 230, 230);
+    display: inline-block;
+    background: rgb(10, 53, 192);
+    background: linear-gradient( 90deg,
+        rgb(9, 48, 179) 0%,
+        rgb(25, 71, 219) 
+    );
+    border: 1px solid rgb(8, 86, 100);
+    -webkit-box-shadow: 0px 0px 32px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 32px -12px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 32px -12px rgba(0,0,0,0.75);
+    border-radius: 4px;
+    width: auto;
+    padding: 25px 15px;  
+    transition: .05s;
+    font-family: Helvetica, sans-serif;
+    font-size: larger;
+    cursor: pointer;
+}
+
+.get-lights:hover {transform: scale(1.01);}
+
+.get-lights:active {
+    -webkit-box-shadow: 0px 0px 15px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px -12px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px -12px rgba(0,0,0,0.75);
+    transform: translateY(4px);
+    user-select: none;
+}
+
