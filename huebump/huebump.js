@@ -84,26 +84,81 @@ function toggle_on() {
 
 
 // huebump code
-
-
-
 //IP of the bridge
-const bridgeIP = "";
-
+let bridgeIP = "";
+let userID = "";
 
 //api call returns json. internalipaddress is the IP of the bridge
 $(".get-lights").click(function(){
     $(".get-lights").html("<img class='load-img d-none d-md-block' src='./speaker.png'>");
-      $.getJSON(" https://www.meethue.com/api/nupnp", function(result){
-        console.log(result);
-        if(result) {
-            try {
-                let bridgeIP = JSON.parse(result).internalipaddress;
-                console.log(bridgeIP);
-            } catch(e) {
-                console.log(e);
-                $(".get-lights").html("Could not find hue bridge. Try again?")
-            }
+      $.getJSON(" https://www.meethue.com/api/nupnp", function(data){         
+         
+      
+    //checks if IP value exists for bridge. returns error to the button if not
+        if(data[0].hasOwnProperty('internalipaddress')) {
+                bridgeIP = data[0].internalipaddress;
+                console.log("Local IP of hue bridge 0: " + data[0].internalipaddress); 
+                
+                //get user ID
+                userID = getUserID(bridgeIP);
+                //get lights
+
+        }
+        else{
+            $(".get-lights").html("Could not find hue bridge. Try again?")
         }
     });
 })
+
+
+
+
+//gets the cached userID for the bridge from cookies, or creates one if it does not exist already
+function getUserID(bridgeIP){
+    let send = JSON.stringify({"devicetype":"huebump"});
+    $.post(bridgeIP+"/api", send);
+}
+
+
+
+//get all lights connected to the bridge into an array
+function getLights(bridgeIP, userID){
+
+
+    let apiURL = bridgeIP + '/api/' + userid
+
+    $.getJSON(
+        apiURL,
+        function(data) {
+            console.log(data);
+            var size = Object.keys(data).length;
+            console.log(size);
+            $('#light_container').empty();
+
+            var toAdd = document.createDocumentFragment();
+            for (var i = 0; i < size; i++) {
+                var obj = data[i + 1];
+                console.log(obj.state.on);
+                var newDiv = document.createElement('a');
+                newDiv.id = i + 1;
+                newDiv.setAttribute('onclick', 'toggle_on();');
+                newDiv.innerHTML = 'Light ' + (i + 1);
+
+                if (obj.state.on == true) {
+                    newDiv.className = 'light_on';
+                    console.log('light' + i + ' is on');
+                    newDiv.value = 'ON';
+                } else if (obj.state.on == false) {
+                    newDiv.className = 'light_off';
+                    newDiv.value = 'OFF';
+                    console.log('light' + i + ' is off');
+                } else {
+                    newDiv.classname = 'light';
+                }
+                toAdd.appendChild(newDiv);
+            }
+            $('#light_container').append(toAdd);
+        }
+);
+}
+    

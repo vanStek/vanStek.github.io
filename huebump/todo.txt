@@ -1,0 +1,3 @@
+cache Hue bridge user ID on client side so numerous users arent created. must use cookies for this
+
+turn off getlights.click() after successful connection to bridge
