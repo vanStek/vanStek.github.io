@@ -92,10 +92,9 @@ let userID = "";
 $(".get-lights").click(function(){
     $(".get-lights").html("<img class='load-img d-none d-md-block' src='./speaker.png'>");
       $.getJSON(" https://www.meethue.com/api/nupnp", function(data){         
-         
-      
+            
     //checks if IP value exists for bridge. returns error to the button if not
-        if(data[0].hasOwnProperty('internalipaddress')) {
+        if(data.length !== 0 && data[0].hasOwnProperty('internalipaddress')) {
                 bridgeIP = data[0].internalipaddress;
                 console.log("Local IP of hue bridge 0: " + data[0].internalipaddress); 
                 
