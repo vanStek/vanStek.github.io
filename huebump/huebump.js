@@ -111,11 +111,21 @@ $(".get-lights").click(function(){
 
 
 
-
 //gets the cached userID for the bridge from cookies, or creates one if it does not exist already
 function getUserID(bridgeIP){
+    console.log("here");
     let send = JSON.stringify({"devicetype":"huebump"});
-    $.post(bridgeIP+"/api", send);
+    console.log(send)
+    $.post(
+        "https://"+bridgeIP+"/api", 
+        send,
+        function(data){
+            console.log(data);
+            if(data.hasOwnProperty("success")){
+                console.log(data[0].success.username);
+                return data[0].success.username;
+            }
+    });
 }
 
 
@@ -123,8 +133,9 @@ function getUserID(bridgeIP){
 //get all lights connected to the bridge into an array
 function getLights(bridgeIP, userID){
 
-
+    
     let apiURL = bridgeIP + '/api/' + userid
+    
 
     $.getJSON(
         apiURL,
