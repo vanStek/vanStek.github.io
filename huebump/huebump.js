@@ -1,97 +1,31 @@
-// old hue code
-
-$('#get_lights').click(function() {
-    $.getJSON(
-        'https://10.0.0.78/api/rVHJqasih6l0fzSXE4m8KfH9ljAMq6bXtZmRdcTf/lights',
-        function(data) {
-            console.log(data);
-            var size = Object.keys(data).length;
-            console.log(size);
-            $('#light_container').empty();
-
-            var toAdd = document.createDocumentFragment();
-            for (var i = 0; i < size; i++) {
-                var obj = data[i + 1];
-                console.log(obj.state.on);
-                var newDiv = document.createElement('a');
-                newDiv.id = i + 1;
-                newDiv.setAttribute('onclick', 'toggle_on();');
-                newDiv.innerHTML = 'Light ' + (i + 1);
-
-                if (obj.state.on == true) {
-                    newDiv.className = 'light_on';
-                    console.log('light' + i + ' is on');
-                    newDiv.value = 'ON';
-                } else if (obj.state.on == false) {
-                    newDiv.className = 'light_off';
-                    newDiv.value = 'OFF';
-                    console.log('light' + i + ' is off');
-                } else {
-                    newDiv.classname = 'light';
-                }
-                toAdd.appendChild(newDiv);
-            }
-            $('#light_container').append(toAdd);
-        }
-    );
-});
-
-function toggle_on() {
-    var light = event.target.id;
-
-    if (event.target.value == 'OFF' || event.target.value == null) {
-        {
-            $.ajax({
-                url:
-                    'https://10.0.0.78/api/rVHJqasih6l0fzSXE4m8KfH9ljAMq6bXtZmRdcTf/lights/' +
-                    light +
-                    '/state',
-                type: 'PUT',
-                data: JSON.stringify({ on: true }),
-                success: function() {
-                    console.log('Light ' + light + ' has been turned on');
-                    //alert("Light "+ light +" has been turned on")
-                }
-            });
-        }
-        $('#' + light)
-            .removeClass()
-            .addClass('light_on');
-        event.target.value = 'ON';
-    } else if (event.target.value == 'ON') {
-        {
-            $.ajax({
-                url:
-                    'https://10.0.0.78/api/rVHJqasih6l0fzSXE4m8KfH9ljAMq6bXtZmRdcTf/lights/' +
-                    light +
-                    '/state',
-                type: 'PUT',
-                data: JSON.stringify({ on: false }),
-                success: function() {
-                    console.log('Light ' + light + ' has been turned off');
-                    //alert("Light "+light+" has been turned off")
-                }
-            });
-        }
-        $('#' + light)
-            .removeClass()
-            .addClass('light_off');
-        event.target.value = 'OFF';
-    }
-}
-
-
-
-
 // huebump code
 //IP of the bridge
 let bridgeIP = "";
 let userID = "";
 
+
+
+
+$.getJSON("https://discovery.meethue.com", function(data){         
+            
+    //checks if IP value exists for bridge. returns error to the button if not
+        if(data.length !== 0 && data[0].hasOwnProperty('internalipaddress')) {
+                bridgeIP = data[0].internalipaddress;
+                console.log("Local IP of hue bridge 0: " + data[0].internalipaddress);                
+                //get user ID
+                userID = getUserID(bridgeIP);
+                //get lights
+        }
+        else{
+            $(".get-lights").html("Could not find hue bridge. Try again?")
+        }
+    });
+
+
 //api call returns json. internalipaddress is the IP of the bridge
 $(".get-lights").click(function(){
     $(".get-lights").html("<img class='load-img d-none d-md-block' src='./speaker.png'>");
-      $.getJSON(" https://www.meethue.com/api/nupnp", function(data){         
+      $.getJSON("https://discovery.meethue.com", function(data){         
             
     //checks if IP value exists for bridge. returns error to the button if not
         if(data.length !== 0 && data[0].hasOwnProperty('internalipaddress')) {
@@ -101,7 +35,6 @@ $(".get-lights").click(function(){
                 //get user ID
                 userID = getUserID(bridgeIP);
                 //get lights
-
         }
         else{
             $(".get-lights").html("Could not find hue bridge. Try again?")
@@ -113,16 +46,15 @@ $(".get-lights").click(function(){
 
 //gets the cached userID for the bridge from cookies, or creates one if it does not exist already
 function getUserID(bridgeIP){
-    console.log("here");
     let send = JSON.stringify({"devicetype":"huebump"});
-    console.log(send)
     $.post(
-        "https://"+bridgeIP+"/api", 
+        "http://"+bridgeIP+"/api", 
         send,
         function(data){
             console.log(data);
-            if(data.hasOwnProperty("success")){
-                console.log(data[0].success.username);
+            if(data[0].hasOwnProperty("success")){
+                
+                console.log("Found username: " + data[0].success.username);
                 return data[0].success.username;
             }
     });
@@ -133,11 +65,8 @@ function getUserID(bridgeIP){
 //get all lights connected to the bridge into an array
 function getLights(bridgeIP, userID){
 
-    
     let apiURL = bridgeIP + '/api/' + userid
-    
-
-    $.getJSON(
+        $.getJSON(
         apiURL,
         function(data) {
             console.log(data);
@@ -172,3 +101,32 @@ function getLights(bridgeIP, userID){
 );
 }
     
+
+
+
+
+// Using getUserMedia with the Web Audio API
+
+//PIPE WEB MIC INTO AUDIO API THEN GET BPM
+
+// Chrome supports live microphone input from getUserMedia() to the Web Audio API for real-time effects. Piping microphone input to the Web Audio API looks like this:
+
+// window.AudioContext = window.AudioContext ||
+//                       window.webkitAudioContext;
+
+// const context = new AudioContext();
+
+// navigator.mediaDevices.getUserMedia({audio: true}).
+//   then((stream) => {
+//     const microphone = context.createMediaStreamSource(stream);
+//     const filter = context.createBiquadFilter();
+//     // microphone -> filter -> destination
+//     microphone.connect(filter);
+//     filter.connect(context.destination);
+// });
+
+
+// https://www.html5rocks.com/en/tutorials/getusermedia/intro/
+// https://webaudiodemos.appspot.com/input/index.html
+
+

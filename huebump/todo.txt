@@ -3,3 +3,8 @@ cache Hue bridge user ID on client side so numerous users arent created. must us
 make speaker images bounce to the right BPM
 
 turn off getlights.click() after successful connection to bridge
+
+add visualizer
+
+
+
