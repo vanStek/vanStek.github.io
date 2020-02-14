@@ -1,25 +1,13 @@
 // huebump code
 //IP of the bridge
-let bridgeIP = "";
-let userID = "";
+let bridgeIP;
+
+
+//TEMPORARY
+let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
 
 
 
-
-$.getJSON("https://discovery.meethue.com", function(data){         
-            
-    //checks if IP value exists for bridge. returns error to the button if not
-        if(data.length !== 0 && data[0].hasOwnProperty('internalipaddress')) {
-                bridgeIP = data[0].internalipaddress;
-                console.log("Local IP of hue bridge 0: " + data[0].internalipaddress);                
-                //get user ID
-                userID = getUserID(bridgeIP);
-                //get lights
-        }
-        else{
-            $(".get-lights").html("Could not find hue bridge. Try again?")
-        }
-    });
 
 
 //api call returns json. internalipaddress is the IP of the bridge
@@ -33,14 +21,31 @@ $(".get-lights").click(function(){
                 console.log("Local IP of hue bridge 0: " + data[0].internalipaddress); 
                 
                 //get user ID
-                userID = getUserID(bridgeIP);
+                //userID = getUserID(bridgeIP);
+                
                 //get lights
+                getLights(bridgeIP, userID);
         }
         else{
             $(".get-lights").html("Could not find hue bridge. Try again?")
         }
     });
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//functions
 
 
 
@@ -64,8 +69,9 @@ function getUserID(bridgeIP){
 
 //get all lights connected to the bridge into an array
 function getLights(bridgeIP, userID){
-
-    let apiURL = bridgeIP + '/api/' + userid
+  
+    let apiURL = "https://" + bridgeIP + '/api/' + userID + '/lights';
+    console.log("getLights URL is : " + apiURL);
         $.getJSON(
         apiURL,
         function(data) {
