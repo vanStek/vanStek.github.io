@@ -5,7 +5,7 @@ let bridgeIP;
 //JSON data about lights
 let lightInfo;
 let stopLights = false;
-
+let on = true;
 
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
@@ -37,6 +37,9 @@ $(document).ready(function(){
 
     $(".test-lights").click(function(){
         setLightBPM("test", 5000);
+    });
+    $(".stop-lights").click(function(){
+        stopLights = !stopLights
     });
 })
 
@@ -86,18 +89,18 @@ function getLights(bridgeIP, userID){
 
 function setLightBPM(type, bpm){
     
-
+    
     let bpmURL = "http://" + bridgeIP+ "/api/"+userID+"/lights/4/state";
     console.log(bpmURL);
     let ajaxContent;
-    let on = true;
+    
     if(on == true){
         ajaxContent = JSON.stringify({"on":false});
     }
     else{
         ajaxContent =  JSON.stringify({"on":true});
     } 
-    console.log
+    console.log("sending " + !on);
 
     $.ajax({
         url: bpmURL,
@@ -105,14 +108,14 @@ function setLightBPM(type, bpm){
         data: ajaxContent,
         success: function(){
            on = !on;
-           console.log("Lights on: " + on);
+           console.log("Lights on: " + !on);
         }
     })
 
     if(stopLights == true){
         return;
     }
-    // setTimeout(setLightBPM, bpm);
+    setTimeout(setLightBPM, 600);
 }
 
 
