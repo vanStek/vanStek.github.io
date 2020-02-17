@@ -2,43 +2,43 @@
 //IP of the bridge
 let bridgeIP;
 
+//JSON data about lights
+let lightInfo;
+let stopLights = false;
+
 
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
 
 
-
-
-
-//api call returns json. internalipaddress is the IP of the bridge
-$(".get-lights").click(function(){
-    $(".get-lights").html("<img class='load-img d-none d-md-block' src='./speaker.png'>");
-      $.getJSON("https://discovery.meethue.com", function(data){         
-            
-    //checks if IP value exists for bridge. returns error to the button if not
-        if(data.length !== 0 && data[0].hasOwnProperty('internalipaddress')) {
-                bridgeIP = data[0].internalipaddress;
-                console.log("Local IP of hue bridge 0: " + data[0].internalipaddress); 
+$(document).ready(function(){
+    //api call returns json. internalipaddress is the IP of the bridge
+    $(".get-lights").click(function(){
+        $(".get-lights").html("<img class='load-img d-none d-md-block' src='./speaker.png'>");
+        $.getJSON("https://discovery.meethue.com", function(data){         
                 
-                //get user ID
-                //userID = getUserID(bridgeIP);
-                
-                //get lights
-                getLights(bridgeIP, userID);
-        }
-        else{
-            $(".get-lights").html("Could not find hue bridge. Try again?")
-        }
+        //checks if IP value exists for bridge. returns error to the button if not
+            if(data.length !== 0 && data[0].hasOwnProperty('internalipaddress')) {
+                    bridgeIP = data[0].internalipaddress;
+                    console.log("Local IP of hue bridge 0: " + data[0].internalipaddress); 
+                    
+                    //get user ID
+                    //userID = getUserID(bridgeIP);
+                    
+                    //get lights
+                    getLights(bridgeIP, userID);
+            }
+            else{
+                $(".get-lights").html("Could not find hue bridge. Try again?")
+            }
+        });
+    });
+
+
+    $(".test-lights").click(function(){
+        setLightBPM("test", 5000);
     });
 })
-
-
-
-
-
-
-
-
 
 
 
@@ -57,8 +57,7 @@ function getUserID(bridgeIP){
         send,
         function(data){
             console.log(data);
-            if(data[0].hasOwnProperty("success")){
-                
+            if(data[0].hasOwnProperty("success")){          
                 console.log("Found username: " + data[0].success.username);
                 return data[0].success.username;
             }
@@ -69,45 +68,52 @@ function getUserID(bridgeIP){
 
 //get all lights connected to the bridge into an array
 function getLights(bridgeIP, userID){
-  
+
     let apiURL = "https://" + bridgeIP + '/api/' + userID + '/lights';
-    console.log("getLights URL is : " + apiURL);
+    console.log("getLights() URL is : " + apiURL);
+
         $.getJSON(
-        apiURL,
-        function(data) {
-            console.log(data);
-            var size = Object.keys(data).length;
-            console.log(size);
-            $('#light_container').empty();
-
-            var toAdd = document.createDocumentFragment();
-            for (var i = 0; i < size; i++) {
-                var obj = data[i + 1];
-                console.log(obj.state.on);
-                var newDiv = document.createElement('a');
-                newDiv.id = i + 1;
-                newDiv.setAttribute('onclick', 'toggle_on();');
-                newDiv.innerHTML = 'Light ' + (i + 1);
-
-                if (obj.state.on == true) {
-                    newDiv.className = 'light_on';
-                    console.log('light' + i + ' is on');
-                    newDiv.value = 'ON';
-                } else if (obj.state.on == false) {
-                    newDiv.className = 'light_off';
-                    newDiv.value = 'OFF';
-                    console.log('light' + i + ' is off');
-                } else {
-                    newDiv.classname = 'light';
-                }
-                toAdd.appendChild(newDiv);
+            apiURL,
+            function(data){
+                console.log(data);
+                let size = Object.keys(data).length;
+                console.log("There are " +size+ " lights.");
             }
-            $('#light_container').append(toAdd);
-        }
-);
+        );
 }
     
 
+
+function setLightBPM(type, bpm){
+    
+
+    let bpmURL = "http://" + bridgeIP+ "/api/"+userID+"/lights/4/state";
+    console.log(bpmURL);
+    let ajaxContent;
+    let on = true;
+    if(on == true){
+        ajaxContent = JSON.stringify({"on":false});
+    }
+    else{
+        ajaxContent =  JSON.stringify({"on":true});
+    } 
+    console.log
+
+    $.ajax({
+        url: bpmURL,
+        type: 'PUT',
+        data: ajaxContent,
+        success: function(){
+           on = !on;
+           console.log("Lights on: " + on);
+        }
+    })
+
+    if(stopLights == true){
+        return;
+    }
+    // setTimeout(setLightBPM, bpm);
+}
 
 
 
