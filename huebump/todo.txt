@@ -6,5 +6,6 @@ turn off getlights.click() after successful connection to bridge
 
 add visualizer
 
+change transition time to 0 on lights
 
 

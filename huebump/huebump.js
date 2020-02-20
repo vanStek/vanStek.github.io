@@ -6,7 +6,7 @@ let bridgeIP;
 let lightInfo;
 let stopLights = false;
 let on = true;
-
+let lightAmount;
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
 
@@ -41,6 +41,9 @@ $(document).ready(function(){
     $(".stop-lights").click(function(){
         stopLights = !stopLights
     });
+    $(".transition-set").click(function(){
+        setTransitionTime();
+    });
 })
 
 
@@ -71,7 +74,6 @@ function getUserID(bridgeIP){
 
 //get all lights connected to the bridge into an array
 function getLights(bridgeIP, userID){
-
     let apiURL = "https://" + bridgeIP + '/api/' + userID + '/lights';
     console.log("getLights() URL is : " + apiURL);
 
@@ -79,26 +81,33 @@ function getLights(bridgeIP, userID){
             apiURL,
             function(data){
                 console.log(data);
-                let size = Object.keys(data).length;
-                console.log("There are " +size+ " lights.");
+                let lightAmount = Object.keys(data).length;
+                console.log("There are " +lightAmount+ " lights.");
             }
         );
 }
     
 
 
+
+
 function setLightBPM(type, bpm){
-    
     
     let bpmURL = "http://" + bridgeIP+ "/api/"+userID+"/lights/4/state";
     console.log(bpmURL);
     let ajaxContent;
     
     if(on == true){
-        ajaxContent = JSON.stringify({"on":false});
+        ajaxContent = JSON.stringify({
+        "on":false,
+        "bri":1,
+        "transitiontime": 0});
     }
     else{
-        ajaxContent =  JSON.stringify({"on":true});
+        ajaxContent =  JSON.stringify({
+        "on":true,
+        "bri":1,
+        "transitiontime": 0});
     } 
     console.log("sending " + !on);
 
@@ -115,7 +124,7 @@ function setLightBPM(type, bpm){
     if(stopLights == true){
         return;
     }
-    setTimeout(setLightBPM, 600);
+    setTimeout(setLightBPM, 200);
 }
 
 
