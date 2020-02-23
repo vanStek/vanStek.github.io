@@ -7,6 +7,7 @@ let lightInfo;
 let stopLights = false;
 let on = true;
 let brightness = 254;
+transitiontime = 0;
 let lightAmount;
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
@@ -60,7 +61,7 @@ $(document).ready(function(){
 function getUserID(bridgeIP){
     let send = JSON.stringify({"devicetype":"huebump"});
     $.post(
-        "http://"+bridgeIP+"/api", 
+        "https://"+bridgeIP+"/api", 
         send,
         function(data){
             console.log(data);
