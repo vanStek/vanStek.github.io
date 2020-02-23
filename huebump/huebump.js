@@ -7,7 +7,8 @@ let lightInfo;
 let stopLights = false;
 let on = true;
 let brightness = 254;
-transitiontime = 0;
+let transitiontime = 0;
+let bpm = 128;
 let lightAmount;
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
@@ -94,7 +95,11 @@ function getLights(bridgeIP, userID){
 
 
 function setLightBPM(type, bpm){
-    
+    //sets the repeat delay to beats per second
+    bpm = $("#bpmSlider").val()
+    bps = 30000/bpm;
+
+
     let bpmURL = "http://" + bridgeIP+ "/api/"+userID+"/lights/4/state";
     console.log(bpmURL);
     let ajaxContent;
@@ -122,11 +127,12 @@ function setLightBPM(type, bpm){
            console.log("Lights on: " + !on);
         }
     })
-
+    console.log("BPM is " + bpm);
+        
     if(stopLights == true){
         return;
     }
-    setTimeout(setLightBPM, 200);
+    setTimeout(setLightBPM, bps);
 }
 
 
