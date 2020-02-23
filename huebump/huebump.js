@@ -6,6 +6,7 @@ let bridgeIP;
 let lightInfo;
 let stopLights = false;
 let on = true;
+let brightness = 254;
 let lightAmount;
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
@@ -100,14 +101,14 @@ function setLightBPM(type, bpm){
     if(on == true){
         ajaxContent = JSON.stringify({
         "on":false,
-        "bri":1,
-        "transitiontime": 0});
+        "bri":brightness,
+        "transitiontime": transitiontime});
     }
     else{
         ajaxContent =  JSON.stringify({
         "on":true,
-        "bri":1,
-        "transitiontime": 0});
+        "bri":brightness,
+        "transitiontime": transitiontime});
     } 
     console.log("sending " + !on);
 
