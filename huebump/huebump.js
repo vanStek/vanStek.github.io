@@ -10,16 +10,9 @@ let brightness = 254;
 let transitiontime = 0;
 let bpm = 128;
 let lightAmount;
-let song = new stasilo.BeatDetector({
-    sens: 5.0,
-    visualizerFFTSize: 256, 
-    analyserFFTSize:   256, 
-    passFreq:          600,
-    }); 
+
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
-
-
 
 //Check cookies
 console.log(document.cookie);
@@ -73,16 +66,13 @@ $(document).ready(function(){
     $(".detectBPM").click(function(){
             
     });
-    $(".displayBPM").click(function(){
-        console.log(song.getBPMGuess());
-    });
-    
+
 })
 
 
 
 
-
+ 
 
 //functions
 
