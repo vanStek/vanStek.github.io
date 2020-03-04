@@ -10,10 +10,25 @@ let brightness = 254;
 let transitiontime = 0;
 let bpm = 128;
 let lightAmount;
+let song = new stasilo.BeatDetector({
+    sens: 5.0,
+    visualizerFFTSize: 256, 
+    analyserFFTSize:   256, 
+    passFreq:          600,
+    }); 
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
 
 
+
+//Check cookies
+console.log(document.cookie);
+
+
+
+
+
+// setting all buttons to their respective functions
 $(document).ready(function(){
     //api call returns json. internalipaddress is the IP of the bridge
     $(".get-lights").click(function(){
@@ -23,6 +38,11 @@ $(document).ready(function(){
         //checks if IP value exists for bridge. returns error to the button if not
             if(data.length !== 0 && data[0].hasOwnProperty('internalipaddress')) {
                     bridgeIP = data[0].internalipaddress;
+
+                    //sets cookie so site remembers bridgeIP and userID
+                    document.cookie = "bridgeIP = " + bridgeIP + ";"; 
+
+
                     console.log("Local IP of hue bridge 0: " + data[0].internalipaddress); 
                     
                     //get user ID
@@ -47,6 +67,16 @@ $(document).ready(function(){
     $(".transition-set").click(function(){
         setTransitionTime();
     });
+    $(".getUser").click(function(){
+        alert(document.cookie); 
+    });
+    $(".detectBPM").click(function(){
+            
+    });
+    $(".displayBPM").click(function(){
+        console.log(song.getBPMGuess());
+    });
+    
 })
 
 
@@ -62,12 +92,15 @@ $(document).ready(function(){
 function getUserID(bridgeIP){
     let send = JSON.stringify({"devicetype":"huebump"});
     $.post(
-        "https://"+bridgeIP+"/api", 
+        "http://"+bridgeIP+"/api", 
         send,
         function(data){
             console.log(data);
             if(data[0].hasOwnProperty("success")){          
                 console.log("Found username: " + data[0].success.username);
+                //sets userID cookie 
+                document.cookie = "userID = " + userID + ";";                       
+
                 return data[0].success.username;
             }
     });
@@ -77,7 +110,7 @@ function getUserID(bridgeIP){
 
 //get all lights connected to the bridge into an array
 function getLights(bridgeIP, userID){
-    let apiURL = "https://" + bridgeIP + '/api/' + userID + '/lights';
+    let apiURL = "http://" + bridgeIP + '/api/' + userID + '/lights';
     console.log("getLights() URL is : " + apiURL);
 
         $.getJSON(
