@@ -8,8 +8,8 @@ let stopLights = false;
 let on = true;
 let brightness = 254;
 let transitiontime = 0;
-let bpm = 128;
 let lightAmount;
+let songBPM = 100;
 
 //TEMPORARY
 let userID = "b6yoDz5SoZXLpsh-kgkuBVCuzz0BdTljllp--WfK"; 
@@ -51,8 +51,8 @@ $(document).ready(function(){
     });
 
 
-    $(".test-lights").click(function(){
-        setLightBPM("test", 5000);
+    $(".strobe-lights").click(function(){
+        setLightBPM("test");
     });
     $(".stop-lights").click(function(){
         stopLights = !stopLights
@@ -63,18 +63,10 @@ $(document).ready(function(){
     $(".getUser").click(function(){
         alert(document.cookie); 
     });
-    $(".detectBPM").click(function(){
-            
-    });
 
 })
 
 
-
-
- 
-
-//functions
 
 
 
@@ -117,16 +109,15 @@ function getLights(bridgeIP, userID){
 
 
 
-function setLightBPM(type, bpm){
+function setLightBPM(type){
     //sets the repeat delay to beats per second
-    bpm = $("#bpmSlider").val()
-    bps = 30000/bpm;
-
-
+    
+    //in one minute, there 
+    timeout  = 30000/songBPM;
     let bpmURL = "http://" + bridgeIP+ "/api/"+userID+"/lights/4/state";
     console.log(bpmURL);
+
     let ajaxContent;
-    
     if(on == true){
         ajaxContent = JSON.stringify({
         "on":false,
@@ -150,12 +141,12 @@ function setLightBPM(type, bpm){
            console.log("Lights on: " + !on);
         }
     })
-    console.log("BPM is " + bpm);
+    console.log("BPM is " + songBPM);
         
     if(stopLights == true){
         return;
     }
-    setTimeout(setLightBPM, bps);
+    setTimeout(setLightBPM, timeout);
 }
 
 
@@ -185,3 +176,57 @@ function setLightBPM(type, bpm){
 // https://webaudiodemos.appspot.com/input/index.html
 
 
+
+
+
+var context, analyser,
+    bpm, bpmDisplay, currentBPMDisplay;
+var SAMPLE_SIZE = 2048;
+
+function startListening () {
+    context = new (window.AudioContext || window.webkitAudioContext)()
+    analyser = context.createAnalyser();
+    bpmDisplay = document.getElementById('bpmDisplay');
+    bpm = new BeatDetektor(85, 169);
+
+    analyser.fftSize = SAMPLE_SIZE;
+
+    navigator.webkitGetUserMedia({audio: true}, function(stream) {
+        var microphone = context.createMediaStreamSource(stream);
+
+        // Demo to:
+        // connect source through a series of filters
+        //var compressor = context.createDynamicsCompressor();
+        //var reverb = context.createConvolver();
+        //var volume = context.createGainNode();
+
+        //microphone.connect(compressor);
+        //compressor.connect(reverb);
+        //reverb.connect(volume);
+        //volume.connect(context.destination);
+
+        // microphone -> filter -> destination.
+        microphone.connect(analyser);
+
+        bpmUpdate();
+    }, function () { alert('fail'); });
+
+}
+
+function bpmUpdate (time) {
+
+    // Get the frequency-domain data
+    var data = new Uint8Array(SAMPLE_SIZE),
+        length = data.length,
+        sum, average, bar_width, scaled_average;
+    analyser.getByteFrequencyData(data);
+
+
+    // Beatdetektor api
+    bpm.process(time/1000, data);
+    songBPM = bpm.win_bpm_int_lo;
+    bpmDisplay.innerHTML = bpm.win_bpm_int_lo;
+
+
+    window.requestAnimationFrame(bpmUpdate);
+}
