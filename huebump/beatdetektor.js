@@ -202,13 +202,13 @@ BeatDetektor.prototype.reset = function()
 
 BeatDetektor.config_default = {
 	BD_DETECTION_RANGES : 128,  // How many ranges to quantize the FFT into
-	BD_DETECTION_RATE : 12.0,   // Rate in 1.0 / BD_DETECTION_RATE seconds
+	BD_DETECTION_RATE : 30,   // Rate in 1.0 / BD_DETECTION_RATE seconds
 	BD_DETECTION_FACTOR : 0.915, // Trigger ratio
 	BD_QUALITY_DECAY : 0.6,     // range and contest decay
 	BD_QUALITY_TOLERANCE : 0.96,// Use the top x % of contest results
 	BD_QUALITY_REWARD : 10.0,    // Award weight
 	BD_QUALITY_STEP : 0.1,     // Award step (roaming speed)
-	BD_MINIMUM_CONTRIBUTIONS : 6,   // At least x ranges must agree to process a result
+	BD_MINIMUM_CONTRIBUTIONS : 4,   // At least x ranges must agree to process a result
 	BD_FINISH_LINE : 60.0,          // Contest values wil be normalized to this finish line
 	// this is the 'funnel' that pulls ranges in / out of alignment based on trigger detection
 	BD_REWARD_TOLERANCES : [ 0.001, 0.005, 0.01, 0.02, 0.04, 0.08, 0.10, 0.15, 0.30 ],  // .1%, .5%, 1%, 2%, 4%, 8%, 10%, 15%
